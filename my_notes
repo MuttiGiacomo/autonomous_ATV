@@ -1,0 +1,17 @@
+Once the enviroment (PC + dev workspace) are set up:
+- find a decent SDF file   ------>   convert it in URDF
+- find needed sensor ( and propor location on the ATV )
+- add sensors in the URDF
+- verify that topics work properly
+- start working on controll
+
+
+- add terrain info
+
+
+
+
+REMEMBER: note steps in the process so that it will be easier to write the thesis
+
+
+
