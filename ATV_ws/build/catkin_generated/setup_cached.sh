@@ -7,7 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/agtek/autonomous_ATV/ATV_ws/devel:$CMAKE_PREFIX_PATH"
 export PWD='/home/agtek/autonomous_ATV/ATV_ws/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/agtek/autonomous_ATV/ATV_ws/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/agtek/autonomous_ATV/ATV_ws/src:$ROS_PACKAGE_PATH"

@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rodolphe COCKENPOT Apache2.0 license  -->
+<robot name="quad">
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="zed_mat">
+    <color rgba="0.8 0.8 0.8 0.8"/>
+  </material>
+
+
+  <link name="base_footprint"/>
+
+  <link name="base_link">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.35"/>
+      <geometry>
+        <box size="1.0 0.55 0.4"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.27"/>
+      <geometry>
+        <mesh filename="package://atv_description/meshes/atv/base_link.stl"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.3" rpy="0 0 0"/>
+      <mass value="70"/>
+      <inertia ixx="3.78754" ixy="0.007271" ixz="-1.092909" iyy="21.917839" iyz="0.000565" izz="21.669654"/>
+    </inertial>
+  </link>
+
+  <link name="rear_wheel_link">
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.001"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.27"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.01"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name="front_steer_link">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.35"/>
+        <geometry>
+          <cylinder length="0.01" radius="0.001"/>
+        </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.27"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.001"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.3" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name="steer_left">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.35"/>
+      <geometry>
+          <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.27"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.001"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.3" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name="steer_right">
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.35"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.27"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.001"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.3" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+  </link>
+
+  <link name="left_front_wheel">
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.2" radius="0.27"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://atv_description/meshes/atv/wheel.stl"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.120041666667" ixy="0.0" ixz="0.0" iyy="0.120041666667" iyz="0.0" izz="0.196"/>
+    </inertial>
+  </link>
+
+  <link name="right_front_wheel">
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.2" radius="0.27"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0.0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://atv_description/meshes/atv/wheel.stl"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.120041666667" ixy="0.0" ixz="0.0" iyy="0.120041666667" iyz="0.0" izz="0.196"/>
+    </inertial>
+  </link>
+
+  <link name="left_rear_wheel">
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.2" radius="0.27"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="3.14159265359 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://atv_description/meshes/atv/wheel.stl"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.120041666667" ixy="0.0" ixz="0.0" iyy="0.120041666667" iyz="0.0" izz="0.196"/>
+    </inertial>
+  </link>
+
+  <link name="right_rear_wheel">
+    <collision>
+      <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.2" radius="0.27"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0.0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://atv_description/meshes/atv/wheel.stl"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="5.0"/>
+      <inertia ixx="0.120041666667" ixy="0.0" ixz="0.0" iyy="0.120041666667" iyz="0.0" izz="0.196"/>
+    </inertial>
+  </link>
+
+  <link name="lidar">
+    <collision>
+      <origin xyz="0 0 -0.05" rpy="0 0 0" />
+      <geometry>
+        <box size="0.105 0.1 0.1" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <!-- Origin of this mesh is the focal point of the LIDAR. -->
+        <mesh filename="package://lms1xx/meshes/sick-lms1xx.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1.1" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.00371" ixy="0.0" ixz="0.0"
+        iyy="0.003128" iyz="0.0"
+        izz="0.003128" />
+    </inertial>
+  </link>
+
+  <link name="zed_camera_center">
+    <collision>
+      <origin xyz="0 0 -0.05" rpy="0 -1.57079632679 0" />
+      <geometry>
+        <box size="0.105 0.1 0.1" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://zed_wrapper/urdf/models/zed.stl"/>
+      </geometry>
+      <material name="zed_mat"/>
+    </visual>
+    <inertial>
+      <mass value="0.2" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.00371" ixy="0.0" ixz="0.0"
+        iyy="0.003128" iyz="0.0"
+        izz="0.003128" />
+    </inertial>
+  </link>
+
+  <link name="zed_camera_center_optical_frame"/>
+
+  <link name="zed_left_camera_frame"/>
+
+ <link name="zed_left_camera_optical_frame"/>
+
+ <link name="zed_right_camera_frame"/>
+
+ <link name="zed_right_camera_optical_frame"/>
+
+ <joint name="front_right_steer_joint" type="revolute">
+   <axis xyz="0 0 1"/>
+   <parent link="base_link"/>
+   <child link="steer_right"/>
+   <origin xyz="0.63 -0.5 0.27"/>
+   <dynamics damping="0.7" friction="0.7"/>
+   <limit effort="7.0" lower="-1.3962634016" upper="1.3962634016" velocity="3.31612557879"/>
+  </joint>
+ <transmission name="base_to_right_front_steer_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_steer_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_to_right_front_steer_actuator">
+      <!-- The motor is torque controlled -->
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <joint name="front_right_wheel_joint" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="steer_right"/>
+    <child link="right_front_wheel"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+ <transmission name="base_to_right_front_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_to_right_front_wheel_actuators">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <joint name="rear_wheel_joint" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="base_link"/>
+    <child link="rear_wheel_link"/>
+    <origin xyz="-0.63 0 0.27"/>
+  </joint>
+ <transmission name="rear_wheel_joint_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_wheel_joint_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <joint name="front_left_steer_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <parent link="base_link"/>
+    <child link="steer_left"/>
+    <origin xyz="0.63 0.5 0.27"/>
+    <limit effort="7.0" velocity="3.31612557879"/>
+  </joint>
+ <transmission name="base_to_left_front_steer_transmission" type="SimpleTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_steer_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_to_left_front_steer_actuator">
+      <!-- The motor is torque controlled -->
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <joint name="front_left_wheel_joint" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="steer_left"/>
+    <child link="left_front_wheel"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+ <transmission name="base_to_left_front_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_to_left_front_wheel_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <joint name="base_to_right_rear_wheel" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="base_link"/>
+    <child link="right_rear_wheel"/>
+    <origin xyz="-0.6 -0.5 0.27"/>
+  </joint>
+ <transmission name="base_to_right_rear_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_to_right_rear_wheel">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_to_right_rear_wheel_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <joint name="base_to_left_rear_wheel" type="continuous">
+    <axis xyz="0 1 0"/>
+    <parent link="base_link"/>
+    <child link="left_rear_wheel"/>
+    <origin xyz="-0.6 0.5 0.27"/>
+  </joint>
+ <transmission name="base_to_left_rear_wheel_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_to_left_rear_wheel">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_to_left_rear_wheel_joint_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+ <joint name="base_footprint_to_base_link_joint" type="fixed">
+     <axis xyz="0 0 0"/>
+     <parent link="base_footprint"/>
+     <child link="base_link"/>
+     <origin xyz="0 0 0"/>
+   </joint>
+ <joint name="front_steer_joint" type="fixed">
+    <axis xyz="0 1 0"/>
+    <parent link="base_link"/>
+    <child link="front_steer_link"/>
+    <origin xyz="0.41 0 0.14"/>
+  </joint>
+ <joint name="base_to_lidar" type="fixed">
+      <axis xyz="0 1 0"/>
+      <parent link="base_link"/>
+      <child link="lidar"/>
+      <origin rpy="0 0 0" xyz="0.75 0.0 0.45"/>
+    </joint>
+ <joint name="zed_camera_center_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="zed_camera_center"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.75 0.0 0.53"/>
+  </joint>
+ <joint name="zed_camera_center_optical_joint" type="fixed">
+    <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0 0 0"/>
+    <parent link="zed_camera_center"/>
+    <child link="zed_camera_center_optical_frame"/>
+  </joint>
+ <joint name="zed_left_camera_joint" type="fixed">
+    <parent link="zed_camera_center"/>
+    <child link="zed_left_camera_frame"/>
+    <origin rpy="0 0 0" xyz="0 0.06 0"/>
+  </joint>
+ <joint name="zed_left_camera_optical_joint" type="fixed">
+    <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0 0 0"/>
+    <parent link="zed_left_camera_frame"/>
+    <child link="zed_left_camera_optical_frame"/>
+  </joint>
+ <joint name="zed_right_camera_joint" type="fixed">
+    <parent link="zed_camera_center"/>
+    <child link="zed_right_camera_frame"/>
+    <origin rpy="0 0 0" xyz="0 -0.06 0"/>
+  </joint>
+ <joint name="zed_right_camera_optical_joint" type="fixed">
+    <origin rpy="-1.57079632679 0.0 -1.57079632679" xyz="0 0 0"/>
+    <parent link="zed_right_camera_frame"/>
+    <child link="zed_right_camera_optical_frame"/>
+</joint>
+
+  <gazebo reference="left_rear_wheel">
+      <mu1 value="1.0"/>
+      <!-- Columb friction coefficient in fdir1 direction -->
+      <mu2 value="1.0"/>
+      <!-- Columb friction in perpendicular direction to fdir1 -->
+      <kp value="10000000.0"/>
+      <!-- contact stiffness -->
+      <kd value="1.0"/>
+      <!-- contact damping -->
+      <fdir1 value="1 0 0"/>
+      <!-- direction of mu1 friction coefficient in the collision frame -->
+      <material>Gazebo/Black</material>
+      <!--<turnGravityOff>false</turnGravityOff>-->
+    </gazebo>
+    <gazebo reference="left_front_wheel">
+        <mu1 value="1.0"/>
+        <!-- Columb friction coefficient in fdir1 direction -->
+        <mu2 value="1.0"/>
+        <!-- Columb friction in perpendicular direction to fdir1 -->
+        <kp value="10000000.0"/>
+        <!-- contact stiffness -->
+        <kd value="1.0"/>
+        <!-- contact damping -->
+        <fdir1 value="1 0 0"/>
+        <!-- direction of mu1 friction coefficient in the collision frame -->
+        <material>Gazebo/Black</material>
+        <!--<turnGravityOff>false</turnGravityOff>-->
+      </gazebo>
+      <gazebo reference="right_rear_wheel">
+          <mu1 value="1.0"/>
+          <!-- Columb friction coefficient in fdir1 direction -->
+          <mu2 value="1.0"/>
+          <!-- Columb friction in perpendicular direction to fdir1 -->
+          <kp value="10000000.0"/>
+          <!-- contact stiffness -->
+          <kd value="1.0"/>
+          <!-- contact damping -->
+          <fdir1 value="1 0 0"/>
+          <!-- direction of mu1 friction coefficient in the collision frame -->
+          <material>Gazebo/Black</material>
+          <!--<turnGravityOff>false</turnGravityOff>-->
+        </gazebo>
+        <gazebo reference="right_front_wheel">
+            <mu1 value="1.0"/>
+            <!-- Columb friction coefficient in fdir1 direction -->
+            <mu2 value="1.0"/>
+            <!-- Columb friction in perpendicular direction to fdir1 -->
+            <kp value="10000000.0"/>
+            <!-- contact stiffness -->
+            <kd value="1.0"/>
+            <!-- contact damping -->
+            <fdir1 value="1 0 0"/>
+            <!-- direction of mu1 friction coefficient in the collision frame -->
+            <material>Gazebo/Black</material>
+            <!--<turnGravityOff>false</turnGravityOff>-->
+          </gazebo>
+
+
+  <gazebo reference="lidar">
+      <sensor type="ray" name="lidar">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>50</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>720</samples>
+              <resolution>1</resolution>
+              <min_angle>-2.35619</min_angle>
+              <max_angle>2.35619</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>30</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.001</stddev>
+          </noise>
+        </ray>
+        <plugin name="gazebo_ros_laser" filename="libgazebo_ros_laser.so">
+          <topicName>scan</topicName>
+          <frameName>lidar</frameName>
+          <robotNamespace>/</robotNamespace>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+  <gazebo reference="zed_camera_center">
+    <sensor type="depth" name="zed_camera_center">
+      <visualize>true</visualize>
+    <camera>
+      <horizontal_fov>1.047</horizontal_fov>
+      <image>
+        <width>640</width>
+        <height>480</height>
+        <format>R8G8B8</format>
+      </image>
+      <depth_camera>
+      </depth_camera>
+      <clip>
+        <near>0.1</near>
+        <far>100</far>
+      </clip>
+    </camera>
+
+    <plugin name="camera_plugin" filename="libgazebo_ros_openni_kinect.so">
+       <baseline>0.2</baseline>
+       <alwaysOn>true</alwaysOn>
+       <!-- Keep this zero, update_rate in the parent <sensor> tag
+         will control the frame rate. -->
+       <updateRate>0.0</updateRate>
+       <cameraName>camera_ir</cameraName>
+       <imageTopicName>/camera/color/image_raw</imageTopicName>
+       <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
+       <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+       <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
+       <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+       <frameName>zed_camera_center_optical_frame</frameName>
+       <pointCloudCutoff>0.5</pointCloudCutoff>
+       <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+       <distortionK1>0</distortionK1>
+       <distortionK2>0</distortionK2>
+       <distortionK3>0</distortionK3>
+       <distortionT1>0</distortionT1>
+       <distortionT2>0</distortionT2>
+       <CxPrime>0</CxPrime>
+       <Cx>0</Cx>
+       <Cy>0</Cy>
+       <focalLength>0</focalLength>
+       <hackBaseline>0</hackBaseline>
+     </plugin>
+     </sensor>
+   </gazebo>
+  <gazebo>
+     <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+       <robotNamespace>/quad</robotNamespace>
+       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        <legacyModeNS>true</legacyModeNS>
+     </plugin>
+   </gazebo>
+
+
+
+</robot>

@@ -4,6 +4,7 @@ Development of autonomous driving capabilities for an ATV, in collaboration with
 
 Roadmap:
 
+- enviroment setup (ros workspace + gazebo)
 - URDF model of the atv (needed for a proper Gazebo/Rviz/ROS simulation)
 - creation of world
 - identification of the needed/existing sensors

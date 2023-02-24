@@ -1,0 +1,471 @@
+<?xml version="1.0" ?>
+<robot name="polaris_ranger_ev">
+  <joint name="polaris_ranger_ev__front_left_steering_joint" type="revolute">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__front_left_wheel_steering_block"/>
+    <origin rpy="1.57079  0       0" xyz="1.03  0.5   0.32"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0.0" lower="-0.8727" upper="0.8727" velocity="0.0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__front_left_wheel_joint" type="fixed">
+    <parent link="polaris_ranger_ev__front_left_wheel_steering_block"/>
+    <child link="polaris_ranger_ev__front_left_wheel"/>
+    <origin rpy="-3.09079  0       0" xyz="0   0  -0.1"/>
+    <axis xyz="0.00000000e+00   8.30000000e-04   1.00000000e+00"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__front_right_steering_joint" type="revolute">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__front_right_wheel_steering_block"/>
+    <origin rpy="1.57079  0       0" xyz="1.03 -0.5   0.32"/>
+    <axis xyz="0  1  0"/>
+    <limit effort="0.0" lower="-0.8727" upper="0.8727" velocity="0.0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__front_right_wheel_joint" type="fixed">
+    <parent link="polaris_ranger_ev__front_right_wheel_steering_block"/>
+    <child link="polaris_ranger_ev__front_right_wheel"/>
+    <origin rpy="-0.05079  0       0" xyz="0   0   0.1"/>
+    <axis xyz="0.00000000e+00   8.30000000e-04  -1.00000000e+00"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__rear_left_wheel_joint" type="fixed">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__rear_left_wheel"/>
+    <origin rpy="-1.52  0    0" xyz="-0.85  0.6   0.32"/>
+    <axis xyz="0.00000000e+00   8.30000000e-04   1.00000000e+00"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__rear_right_wheel_joint" type="fixed">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__rear_right_wheel"/>
+    <origin rpy="1.52  0    0" xyz="-0.85    -0.50012  0.31492"/>
+    <axis xyz="0.00000000e+00   8.30000000e-04  -1.00000000e+00"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__rear_differential_joint" type="fixed">
+    <parent link="polaris_ranger_ev__rear_left_wheel"/>
+    <child link="polaris_ranger_ev__rear_right_wheel"/>
+    <origin rpy="3.04  0    0" xyz="0      -0.06092 -1.19845"/>
+    <axis xyz="0       0.05077 -0.99871"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__gas_joint" type="prismatic">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__gas_pedal"/>
+    <origin rpy="0  0  0" xyz="0.63     0.1      0.57999"/>
+    <axis xyz="0.7071  0     -0.7071"/>
+    <limit effort="0.0" lower="0.0" upper="0.08" velocity="0.0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__brake_joint" type="prismatic">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__brake_pedal"/>
+    <origin rpy="0  0  0" xyz="0.64     0.27     0.57999"/>
+    <axis xyz="0.85749  0      -0.51449"/>
+    <limit effort="0.0" lower="0.0" upper="0.08" velocity="0.0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__steering_joint" type="revolute">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__steering_wheel"/>
+    <origin rpy="0   -0.87  0" xyz="0.33871  0.3      1.28847"/>
+    <axis xyz="0  0  1"/>
+    <limit effort="0.0" lower="-3.14" upper="3.14" velocity="0.0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__hand_brake_joint" type="revolute">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__hand_brake"/>
+    <origin rpy="0  0  0" xyz="0.53  0.07  1.05"/>
+    <axis xyz="0 -1  0"/>
+    <limit effort="0.0" lower="0.0" upper="0.6" velocity="0.0"/>
+  </joint>
+  <joint name="polaris_ranger_ev__FNR_switch_joint" type="revolute">
+    <parent link="polaris_ranger_ev__chassis"/>
+    <child link="polaris_ranger_ev__FNR_switch"/>
+    <origin rpy="0    0.25  0" xyz="0.56 -0.02  1.08"/>
+    <axis xyz="0 -1  0"/>
+    <limit effort="0.0" lower="-0.3" upper="0.3" velocity="0.0"/>
+  </joint>
+  <link name="polaris_ranger_ev__chassis">
+    <inertial>
+      <mass value="720.0"/>
+      <origin rpy="0  0  0" xyz="0.1  0   0.4"/>
+      <inertia ixx="140" ixy="0.0" ixz="0.0" iyy="550" iyz="0.0" izz="550"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__chassis_bottom">
+      <origin rpy="0  0  0" xyz="0.1   0    0.37"/>
+      <geometry>
+        <box size="1.5 1.34 0.06"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__cargo_bottom">
+      <origin rpy="0  0  0" xyz="-0.9  0   0.9"/>
+      <geometry>
+        <box size="0.9 1.2 0.01"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__cargo_front">
+      <origin rpy="0  0  0" xyz="-0.45     0       1.02499"/>
+      <geometry>
+        <box size="0.05 1.2 0.25"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__cargo_back">
+      <origin rpy="0  0  0" xyz="-1.35     0       1.02499"/>
+      <geometry>
+        <box size="0.05 1.2 0.25"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__cargo_left">
+      <origin rpy="0  0  0" xyz="-0.9      0.6      1.02499"/>
+      <geometry>
+        <box size="0.9 0.05 0.25"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__cargo_right">
+      <origin rpy="0  0  0" xyz="-0.9     -0.6      1.02499"/>
+      <geometry>
+        <box size="0.9 0.05 0.25"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__seat">
+      <origin rpy="0  0  0" xyz="-0.1   0    0.56"/>
+      <geometry>
+        <box size="0.6 1.22 0.50"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__mud_seat">
+      <origin rpy="0  0  0" xyz="-0.1   0    0.81"/>
+      <geometry>
+        <box size="0.6 1.15 0.1"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__seat_back">
+      <origin rpy="0  -0.2  0" xyz="-0.3    0     1.125"/>
+      <geometry>
+        <box size="0.06 1.0 0.4"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__engine">
+      <origin rpy="0  0  0" xyz="1.05  0    0.7"/>
+      <geometry>
+        <box size="0.58 1.0 0.8"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__handle_left_middle">
+      <origin rpy="0  -0.2  0" xyz="-0.3    0.61   1.055"/>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__handle_right_middle">
+      <origin rpy="0  -0.2  0" xyz="-0.3   -0.61   1.055"/>
+      <geometry>
+        <cylinder length="0.17" radius="0.02"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_top_left">
+      <origin rpy="3.14159  1.53159  3.14159" xyz="0    0.61  1.92"/>
+      <geometry>
+        <cylinder length="0.68" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_top_right">
+      <origin rpy="3.14159  1.53159  3.14159" xyz="0   -0.61  1.92"/>
+      <geometry>
+        <cylinder length="0.68" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_top_front">
+      <origin rpy="1.57079  0       0" xyz="0.325  0     1.89"/>
+      <geometry>
+        <cylinder length="1.22" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_top_back">
+      <origin rpy="1.57079  0       0" xyz="-0.33  0    1.92"/>
+      <geometry>
+        <cylinder length="1.22" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_front_left">
+      <origin rpy="0   -0.44  0" xyz="0.54  0.61  1.45"/>
+      <geometry>
+        <cylinder length="1.04" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_front_right">
+      <origin rpy="0   -0.44  0" xyz="0.54 -0.61  1.45"/>
+      <geometry>
+        <cylinder length="1.04" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__fender_front_right">
+      <origin rpy="0    0.35  0" xyz="0.64 -0.61  0.7"/>
+      <geometry>
+        <cylinder length="0.72" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__fender_front_left">
+      <origin rpy="0    0.35  0" xyz="0.64  0.61  0.7"/>
+      <geometry>
+        <cylinder length="0.72" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_back_left">
+      <origin rpy="0   -0.14  0" xyz="-0.37  0.61  1.25"/>
+      <geometry>
+        <cylinder length="0.90" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_back_right">
+      <origin rpy="0   -0.14  0" xyz="-0.37 -0.61  1.25"/>
+      <geometry>
+        <cylinder length="0.90" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_back_midleft">
+      <origin rpy="0   -0.14  0" xyz="-0.37   0.155  1.25"/>
+      <geometry>
+        <cylinder length="0.90" radius="0.023"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_back_midright">
+      <origin rpy="0   -0.14  0" xyz="-0.37  -0.155  1.25"/>
+      <geometry>
+        <cylinder length="0.90" radius="0.023"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_back_upper_left">
+      <origin rpy="0   0.4  0" xyz="-0.38  0.61  1.82"/>
+      <geometry>
+        <cylinder length="0.29" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_back_upper_right">
+      <origin rpy="0   0.4  0" xyz="-0.38 -0.61  1.82"/>
+      <geometry>
+        <cylinder length="0.29" radius="0.03"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_back_upper_midleft">
+      <origin rpy="0   0.4  0" xyz="-0.38   0.155  1.82"/>
+      <geometry>
+        <cylinder length="0.29" radius="0.023"/>
+      </geometry>
+    </collision>
+    <collision name="polaris_ranger_ev__rollcage_back_upper_midright">
+      <origin rpy="0   0.4  0" xyz="-0.38  -0.155  1.82"/>
+      <geometry>
+        <cylinder length="0.29" radius="0.023"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__visual">
+      <origin rpy="0       0      -1.57079" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__rear_right_wheel">
+    <inertial>
+      <mass value="12"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.23" radius="0.32"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__visual">
+      <origin rpy="0      -1.57079  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__rear_left_wheel">
+    <inertial>
+      <mass value="12"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.23" radius="0.32"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__visual">
+      <origin rpy="0      -1.57079  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__front_right_wheel">
+    <inertial>
+      <mass value="12"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.23" radius="0.32"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__visual">
+      <origin rpy="0      -1.57079  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__front_right_wheel_steering_block">
+    <inertial>
+      <mass value="1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="polaris_ranger_ev__front_left_wheel">
+    <inertial>
+      <mass value="12"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.5" ixy="0.0" ixz="0.0" iyy="0.5" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.23" radius="0.32"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__visual">
+      <origin rpy="3.14159  1.57079  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__front_left_wheel_steering_block">
+    <inertial>
+      <mass value="1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__collision">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="polaris_ranger_ev__gas_pedal">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__gas_pedal_collision">
+      <origin rpy="3.14159  1.12559  3.14159" xyz="-0.0385  0     -0.086"/>
+      <geometry>
+        <box size="0.1069000 0.0770000 0.010000"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__visual">
+      <origin rpy="0      0     -1.5707" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__brake_pedal">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__brake_pedal_collision">
+      <origin rpy="3.14159  1.14259  3.14159" xyz="-0.04   0    -0.086"/>
+      <geometry>
+        <box size="0.063 0.08 0.01"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__visual">
+      <origin rpy="0      0     -1.5707" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__steering_wheel">
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="0  0  0" xyz="-0.002  0     0"/>
+      <inertia ixx="0.012" ixy="0" ixz="0" iyy="0.012" iyz="0" izz="0.024"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__collision">
+      <origin rpy="-0.69     0      -1.57079" xyz="0.002  0     0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__visual">
+      <origin rpy="-0.69     0      -1.57079" xyz="0.002  0     0"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__hand_brake">
+    <inertial>
+      <mass value="0.5"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.05"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__hand_brake_collision">
+      <origin rpy="-0.2      0      -1.57079" xyz="0    0    0.05"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__hand_brake_visual">
+      <origin rpy="-0.2      0      -1.57079" xyz="0    0    0.05"/>
+      <geometry>
+        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="polaris_ranger_ev__FNR_switch">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.00006" iyz="0" izz="0.1"/>
+    </inertial>
+    <collision name="polaris_ranger_ev__FNR_switch">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.02 0.04 0.08"/>
+      </geometry>
+    </collision>
+    <visual name="polaris_ranger_ev__FNR_switch_F">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.02 0.04 0.08"/>
+      </geometry>
+    </visual>
+    <visual name="polaris_ranger_ev__FNR_switch_R">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <box size="0.0199 0.0399 0.0799"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
