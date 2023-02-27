@@ -1,0 +1,19 @@
+<package>
+  <description brief="ATV_description">
+
+     ATV_description
+
+  </description>
+  <author>agtek</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ATV_description</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="tf"/>
+  <depend package="geometry_msgs"/>
+  <depend package="urdf"/>
+  <depend package="rviz"/>
+  <depend package="xacro"/>
+
+</package>
