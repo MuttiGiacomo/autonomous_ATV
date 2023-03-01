@@ -15,6 +15,7 @@
     <axis xyz="0.00000000e+00   8.30000000e-04   1.00000000e+00"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
+
   <joint name="polaris_ranger_xp900__front_right_steering_joint" type="revolute">
     <parent link="polaris_ranger_xp900__chassis"/>
     <child link="polaris_ranger_xp900__front_right_wheel_steering_block"/>
@@ -22,9 +23,6 @@
     <axis xyz="0  1  0"/>
     <limit effort="0.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
   </joint>
-
-
-
 
   <joint name="polaris_ranger_xp900__front_right_wheel_joint" type="continuous">
     <parent link="polaris_ranger_xp900__front_right_wheel_steering_block"/>
@@ -50,15 +48,7 @@
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
 
-
-
-
-
-
-
-
-  
-  <joint name="polaris_ranger_xp900__gas_joint" type="fixed">
+  <!--<joint name="polaris_ranger_xp900__gas_joint" type="fixed">
     <parent link="polaris_ranger_xp900__chassis"/>
     <child link="polaris_ranger_xp900__gas_pedal"/>
     <origin rpy="0  0  0" xyz="0.63     0.1      0.57999"/>
@@ -96,7 +86,8 @@
     <origin rpy="0    0.25  0" xyz="0.54     0.1      1.14999"/>
     <axis xyz="0 -1  0"/>
     <limit effort="0.0" lower="-0.3" upper="0.3" velocity="0.0"/>
-  </joint>
+  </joint>-->
+  
   <link name="polaris_ranger_xp900__chassis">
     <inertial>
       <mass value="720.0"/>
@@ -202,33 +193,33 @@
     <visual name="polaris_ranger_xp900__visual">
       <origin rpy="0       0      -1.57079" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://meshes/chasis.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/chasis.dae"/>
       </geometry>
     </visual>
-    <visual name="polaris_ranger_xp900__cargo_visual">
+    <!--<visual name="polaris_ranger_xp900__cargo_visual">
       <origin rpy="0      0     -1.5707" xyz="-1      0      1.0323"/>
       <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polaris.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <visual name="polaris_ranger_xp900__tailgate_visual">
       <origin rpy="0      0     -1.5707" xyz="-1.492  0     1.03"/>
       <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polaris.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <visual name="polaris_ranger_xp900__front_left_brake_visual">
       <origin rpy="3.1415  0      1.5707" xyz="1.12    -0.57487  0.35516"/>
       <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polaris.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
     <visual name="polaris_ranger_xp900__front_right_brake_visual">
       <origin rpy="3.1415  0      1.5707" xyz="1.12     0.57487  0.35516"/>
       <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polaris.dae" scale="1.0 1.0 1.0"/>
       </geometry>
-    </visual>
+    </visual>-->
     <visual name="polaris_ranger_xp900__central_hump1">
       <origin rpy="0  0  0" xyz="0.55 -0.1   0.4"/>
       <geometry>
@@ -281,7 +272,7 @@
     <visual name="polaris_ranger_xp900__tire_visual">
       <origin rpy="3.14159  1.57079  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.003700111 0.886200464 0.886200464"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/right_wheel.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -300,7 +291,7 @@
     <visual name="polaris_ranger_xp900__visual">
       <origin rpy="0      -1.57079  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.003700111 0.886200464 0.886200464"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/right_wheel.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -319,7 +310,7 @@
     <visual name="polaris_ranger_xp900__visual">
       <origin rpy="0      -1.57079  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.003700111 0.886200464 0.886200464"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/right_wheel.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
@@ -338,11 +329,11 @@
     <visual name="polaris_ranger_xp900__visual">
       <origin rpy="0      -1.57079  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.003700111 0.886200464 0.886200464"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/right_wheel.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
   </link>
-  <link name="polaris_ranger_xp900__gas_pedal">
+  <!--<link name="polaris_ranger_xp900__gas_pedal">
     <inertial>
       <mass value="0.1"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -360,8 +351,8 @@
         <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-  </link>
-  <link name="polaris_ranger_xp900__brake_pedal">
+  </link>-->
+  <!--<link name="polaris_ranger_xp900__brake_pedal">
     <inertial>
       <mass value="0.1"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -379,7 +370,7 @@
         <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
       </geometry>
     </visual>
-  </link>
+  </link>-->
   <link name="polaris_ranger_xp900__front_right_wheel_steering_block">
     <inertial>
       <mass value="1"/>
@@ -406,7 +397,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="polaris_ranger_xp900__steering_wheel">
+  <!--<link name="polaris_ranger_xp900__steering_wheel">
     <inertial>
       <mass value="1.0"/>
       <origin rpy="0  0  0" xyz="-0.002  0     0"/>
@@ -468,5 +459,5 @@
         <box size="0.0199 0.0399 0.0799"/>
       </geometry>
     </visual>
-  </link>
+  </link>-->
 </robot>
