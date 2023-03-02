@@ -12,15 +12,15 @@ from ament_index_python.packages import get_package_prefix
 def generate_launch_description():
 
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
-    pkg_box_bot_gazebo = get_package_share_directory('my_box_bot_gazebo')
+    pkg_ATV_description = get_package_share_directory('ATV_description')
 
     # We get the whole install dir
     # We do this to avoid having to copy or softlink manually the packages so that gazebo can find them
-    description_package_name = "my_box_bot_description"
+    description_package_name = "ATV_description"
     install_dir = get_package_prefix(description_package_name)
 
     # Set the path to the WORLD model files. Is to find the models inside the models folder in my_box_bot_gazebo package
-    gazebo_models_path = os.path.join(pkg_box_bot_gazebo, 'models')
+    gazebo_models_path = os.path.join(pkg_ATV_description, 'models')
     # os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
 
     if 'GAZEBO_MODEL_PATH' in os.environ:
@@ -48,7 +48,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
           'world',
-          default_value=[os.path.join(pkg_box_bot_gazebo, 'worlds', 'box_bot_empty.world'), ''],
+          default_value=[os.path.join(pkg_ATV_description, 'worlds', 'ATV_empty.world'), ''],
           description='SDF world file'),
         gazebo
     ])

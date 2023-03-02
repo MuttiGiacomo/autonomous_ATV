@@ -15,5 +15,7 @@
   <depend package="urdf"/>
   <depend package="rviz"/>
   <depend package="xacro"/>
+  <depend package="gazebo_ros"/>
+  <depend package="gazebo"/>
 
 </package>
