@@ -72,7 +72,19 @@ Connections:
     * direction: inbound
     * transport: INTRAPROCESS
 
+-----------------------------------------------------------------------------------------------------------------------------------
+output of topic /gazebo/link_state
 
+['ground_plane::link', 
+'ATV::polaris_ranger_xp900__chassis', 
+'ATV::polaris_ranger_xp900__front_left_wheel_steering_block',
+  'ATV::polaris_ranger_xp900__front_left_wheel',
+ 'ATV::polaris_ranger_xp900__front_right_wheel_steering_block',
+  'ATV::polaris_ranger_xp900__front_right_wheel',
+ 'ATV::polaris_ranger_xp900__rear_left_wheel',
+  'ATV::polaris_ranger_xp900__rear_right_wheel']
+
+gives position and orientation for each of these links, but I don't understand why it devides it into pose and twist (I guess twist=attitude but it's to be investigated)
 
 REMEMBER: note steps in the process so that it will be easier to write the thesis
 
