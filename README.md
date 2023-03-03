@@ -16,3 +16,29 @@ Roadmap:
 - calman filter (sort of)
 
 
+
+
+ROS version: Melodic 
+
+dev_ws: "ATV_ws"
+
+current packages:
+- ATV_description -> for ATV model and world visualization
+- pysdf -> needed for ASD to URDF conversion (to be deleted)
+- test2 -> contains a py_publisher and py_listener, needed for testing the enviroment (to be deleted)
+
+
+launch command
+  ```sh
+cd autonomous_ATV/ATV_ws
+catkin_make
+source devel/setup.bash
+  ```
+launch empty world with ATV in the origin:
+  ```sh
+roslaunch ATV_description launch_ATV.launch
+  ```
+launch Rviz and link_state_publisher:
+  ```sh
+launch ATV_description display_rviz.launch
+  ```
