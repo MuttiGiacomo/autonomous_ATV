@@ -1,0 +1,15 @@
+<package>
+  <description brief="autonomy_scripts">
+
+     autonomy_scripts
+
+  </description>
+  <author>agtek</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/autonomy_scripts</url>
+  <depend package="rospy"/>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+
+</package>
