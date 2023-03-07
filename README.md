@@ -7,7 +7,9 @@ Roadmap:
 - enviroment setup (ros workspace + gazebo)  :white_check_mark: DONE
 - URDF model of the atv (needed for a proper Gazebo/Rviz/ROS simulation)  :white_check_mark: DONE
 - create a proper .launch file :white_check_mark: DONE
-- driving ATV from script :eight_pointed_black_star: ONGOING
+- anable moovement using scrips :eight_pointed_black_star: ONGOING
+- definition of steering mechanism
+- driving ATV from script
 - creation of world  
 - identification of the needed/existing sensors
 - start dealing with sensors and topics 

@@ -6,8 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Grid1
         - /RobotModel1
-        - /RobotModel1/Status1
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 881
   - Class: rviz/Selection
@@ -52,52 +54,77 @@ Visualization Manager:
         Z: 0
       Plane: XY
       Plane Cell Count: 10
-      Reference Frame: <Fixed Frame>
+      Reference Frame: chassis
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
-      Collision Enabled: true
-      Enabled: false
+      Collision Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        chassis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fl_steering_block:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fl_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fr_steering_block:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fr_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rl_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rr_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: false
-      Visual Enabled: true
+      Value: true
+      Visual Enabled: false
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        polaris_ranger_xp900__FNR_switch:
+        chassis:
           Value: true
-        polaris_ranger_xp900__brake_pedal:
+        fl_steering_block:
           Value: true
-        polaris_ranger_xp900__chassis:
+        fl_wheel:
           Value: true
-        polaris_ranger_xp900__front_left_wheel:
+        fr_steering_block:
           Value: true
-        polaris_ranger_xp900__front_left_wheel_steering_block:
+        fr_wheel:
           Value: true
-        polaris_ranger_xp900__front_right_wheel:
+        rl_wheel:
           Value: true
-        polaris_ranger_xp900__front_right_wheel_steering_block:
-          Value: true
-        polaris_ranger_xp900__gas_pedal:
-          Value: true
-        polaris_ranger_xp900__hand_brake:
-          Value: true
-        polaris_ranger_xp900__rear_left_wheel:
-          Value: true
-        polaris_ranger_xp900__rear_right_wheel:
-          Value: true
-        polaris_ranger_xp900__steering_wheel:
+        rr_wheel:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -105,26 +132,16 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        polaris_ranger_xp900__chassis:
-          polaris_ranger_xp900__FNR_switch:
-            {}
-          polaris_ranger_xp900__brake_pedal:
-            {}
-          polaris_ranger_xp900__front_left_wheel_steering_block:
-            polaris_ranger_xp900__front_left_wheel:
+        chassis:
+          fl_steering_block:
+            fl_wheel:
               {}
-          polaris_ranger_xp900__front_right_wheel_steering_block:
-            polaris_ranger_xp900__front_right_wheel:
+          fr_steering_block:
+            fr_wheel:
               {}
-          polaris_ranger_xp900__gas_pedal:
+          rl_wheel:
             {}
-          polaris_ranger_xp900__hand_brake:
-            {}
-          polaris_ranger_xp900__rear_left_wheel:
-            {}
-          polaris_ranger_xp900__rear_right_wheel:
-            {}
-          polaris_ranger_xp900__steering_wheel:
+          rr_wheel:
             {}
       Update Interval: 0
       Value: true
@@ -132,7 +149,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: polaris_ranger_xp900__chassis
+    Fixed Frame: chassis
     Frame Rate: 30
   Name: root
   Tools:
@@ -156,25 +173,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 8.127931594848633
+      Distance: 3.602407455444336
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.13873200118541718
-        Y: -0.04322050139307976
-        Z: 0.29279598593711853
+        X: -0.330863893032074
+        Y: 0.4471227824687958
+        Z: 0.2241632491350174
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6053979992866516
+      Pitch: 0.41539838910102844
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.9835819005966187
+      Yaw: 6.101733684539795
     Saved: ~
 Window Geometry:
   Displays:
