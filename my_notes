@@ -136,7 +136,7 @@ complete tree:
                 |---x
          
 
-REMEMBER: note steps in the process so that it will be easier to write the thesis
-
+shit command for set_link_state
+rosservice call /gazebo/set_link_state '{link_state: {link_name: fr_steering_block, pose: {position: {x: 1, y: 1, z: 1}, orientation: {x: 0, y: 0, z: 0, w: 1}}, twist: {linear: {x: 0.01, y: 0.02, z: 0.03}, angular: {x: 0.04, y: 0.05, z: 0.06}}, reference_frame: chassis}}'
 
 

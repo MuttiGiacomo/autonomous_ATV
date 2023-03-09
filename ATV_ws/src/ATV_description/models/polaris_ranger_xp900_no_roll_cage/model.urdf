@@ -5,7 +5,7 @@
     <child link="fl_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222  0.5      0.35515"/>
     <axis xyz="0  1  0"/>
-    <limit effort="0.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
+    <limit effort="1000.0" lower="-0.7727" upper="0.7727" velocity="1.0"/>
   </joint>
 
   <joint name="fl_joint" type="continuous"> 
@@ -21,7 +21,7 @@
     <child link="fr_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222 -0.5      0.35515"/>
     <axis xyz="0  1  0"/>
-    <limit effort="0.0" lower="-0.7727" upper="0.7727" velocity="0.0"/>
+    <limit effort="1000.0" lower="-0.7727" upper="0.7727" velocity="1.0"/>
   </joint>
 
   <joint name="fr_joint" type="continuous">
@@ -37,7 +37,7 @@
     <child link="rl_wheel"/>
     <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
     <axis xyz="0.00000000e+00   8.30000000e-04   1.00000000e+00"/>
-    <limit effort="0" lower="0" upper="0" velocity="0"/>
+    <limit effort="100" lower="100" upper="-100" velocity="1"/>
   </joint>
 
   <joint name="rr_joint" type="continuous">
@@ -45,7 +45,7 @@
     <child link="rr_wheel"/>
     <origin rpy="1.52  0    0" xyz="-0.99377 -0.61574  0.34189"/>
     <axis xyz="0.00000000e+00   8.30000000e-04  -1.00000000e+00"/>
-    <limit effort="0" lower="0" upper="0" velocity="0"/>
+    <limit effort="100" lower="100" upper="-100" velocity="1"/>
   </joint>
 
   <!--<joint name="gas_joint" type="fixed">
@@ -460,4 +460,57 @@
       </geometry>
     </visual>
   </link>-->
+
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/ATV</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <transmission name="FR_steering_tr">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_steering_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_steering">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="FL_steering_tr">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_steering_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_steering">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="RR_wheel_tr">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rr_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="L_throttle">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="RL_wheel_tr">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rl_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="R_throttle">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
 </robot>

@@ -1,0 +1,12 @@
+<package>
+  <description brief="control">
+
+     control
+
+  </description>
+  <author>agtek</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/control</url>
+
+</package>
