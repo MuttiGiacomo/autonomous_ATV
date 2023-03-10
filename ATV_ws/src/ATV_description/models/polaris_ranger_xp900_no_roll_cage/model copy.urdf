@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot name="polaris_ranger_xp900">
-  <joint name="left_steering_joint" type="revolute">
+  <joint name="fl_steering_joint" type="revolute">
     <parent link="chassis"/>
     <child link="fl_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222  0.5      0.35515"/>
@@ -8,15 +8,15 @@
     <limit effort="1000.0" lower="-0.7727" upper="0.7727" velocity="1.0"/>
   </joint>
 
-  <joint name="left_front_axle" type="continuous"> 
+  <joint name="fl_joint" type="continuous"> 
     <parent link="fl_steering_block"/>
-    <child link="left_front_wheel"/>
+    <child link="fl_wheel"/>
     <origin rpy="-3.09079  0       0" xyz="0      -0.00818 -0.21562"/>
     <axis xyz="0.00000000e+00   8.30000000e-04   1.00000000e+00"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
 
-  <joint name="right_steering_joint" type="revolute">
+  <joint name="fr_steering_joint" type="revolute">
     <parent link="chassis"/>
     <child link="fr_steering_block"/>
     <origin rpy="1.57079  0       0" xyz="1.20222 -0.5      0.35515"/>
@@ -24,25 +24,25 @@
     <limit effort="1000.0" lower="-0.7727" upper="0.7727" velocity="1.0"/>
   </joint>
 
-  <joint name="right_front_axle" type="continuous">
+  <joint name="fr_joint" type="continuous">
     <parent link="fr_steering_block"/>
-    <child link="right_front_wheel"/>
+    <child link="fr_wheel"/>
     <origin rpy="-0.05079  0       0" xyz="0      -0.00818  0.21562"/>
     <axis xyz="0.00000000e+00   8.30000000e-04  -1.00000000e+00"/>
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
 
-  <joint name="left_rear_axle" type="continuous">
+  <joint name="rl_joint" type="continuous">
     <parent link="chassis"/>
-    <child link="left_rear_wheel"/>
+    <child link="rl_wheel"/>
     <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
     <axis xyz="0.00000000e+00   8.30000000e-04   1.00000000e+00"/>
     <limit effort="100" lower="100" upper="-100" velocity="1"/>
   </joint>
 
-  <joint name="right_rear_axle" type="continuous">
+  <joint name="rr_joint" type="continuous">
     <parent link="chassis"/>
-    <child link="right_rear_wheel"/>
+    <child link="rr_wheel"/>
     <origin rpy="1.52  0    0" xyz="-0.99377 -0.61574  0.34189"/>
     <axis xyz="0.00000000e+00   8.30000000e-04  -1.00000000e+00"/>
     <limit effort="100" lower="100" upper="-100" velocity="1"/>
@@ -257,7 +257,7 @@
       </geometry>
     </visual>
   </link>
-  <link name="left_front_wheel">
+  <link name="fl_wheel">
     <inertial>
       <mass value="12"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -276,7 +276,7 @@
       </geometry>
     </visual>
   </link>
-  <link name="right_front_wheel">
+  <link name="fr_wheel">
     <inertial>
       <mass value="12"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -295,7 +295,7 @@
       </geometry>
     </visual>
   </link>
-  <link name="left_rear_wheel">
+  <link name="rl_wheel">
     <inertial>
       <mass value="12"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -314,7 +314,7 @@
       </geometry>
     </visual>
   </link>
-  <link name="right_rear_wheel">
+  <link name="rr_wheel">
     <inertial>
       <mass value="12"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
@@ -469,67 +469,45 @@
     </plugin>
   </gazebo>
 
-  <transmission name="right_steering_trans">
+  <transmission name="FR_steering_tr">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="right_steering_joint">
+    <joint name="fr_steering_joint">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="right_steering_act">
+    <actuator name="R_steering">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
 
-  <transmission name="left_steering_trans">
+  <transmission name="FL_steering_tr">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="left_steering_joint">
+    <joint name="fl_steering_joint">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="left_steering_act">
+    <actuator name="L_steering">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
 
-  <transmission name="right_rear_axle_trans">
+  <transmission name="RR_wheel_tr">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="right_rear_axle">
+    <joint name="rr_joint">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="right_rear_axle_act">
+    <actuator name="L_throttle">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
 
-  <transmission name="left_rear_axle_trans">
+  <transmission name="RL_wheel_tr">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="left_rear_axle">
+    <joint name="rl_joint">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="left_rear_axle_act">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="right_front_axle_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="right_front_axle">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="right_front_axle_act">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
-  <transmission name="left_front_axle_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="left_front_axle">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="left_front_axle_act">
+    <actuator name="R_throttle">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>

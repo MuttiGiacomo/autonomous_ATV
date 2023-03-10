@@ -285,6 +285,12 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //Value Computed by CMake
+ackermann_vehicle_gazebo_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/ackermann_vehicle_gazebo
+
+//Value Computed by CMake
+ackermann_vehicle_gazebo_SOURCE_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/src/ackermann_vehicle_gazebo
+
+//Value Computed by CMake
 beginner_tutorials_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/beginner_tutorials
 
 //Value Computed by CMake
@@ -412,6 +418,12 @@ std_msg_DIR:PATH=std_msg_DIR-NOTFOUND
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
 //Value Computed by CMake
+teleop_twist_keyboard_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/teleop_twist_keyboard
+
+//Value Computed by CMake
+teleop_twist_keyboard_SOURCE_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/src/teleop_twist_keyboard
+
+//Value Computed by CMake
 test2_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/test2
 
 //Value Computed by CMake
@@ -530,7 +542,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
