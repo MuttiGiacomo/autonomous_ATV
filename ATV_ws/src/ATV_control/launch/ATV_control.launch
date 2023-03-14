@@ -16,4 +16,14 @@
     <remap from="/joint_states" to="/ATV/joint_states" />
   </node>
 
+  <!-- run node to convert teleoperation inputs from twist to hackerman_msgs (reads from /cmd_vel, pubblishes on hackermannvliuesbviuesbviuer)-->
+  <node name="cmd_vel_to_ackermann_drive" pkg="ATV_control" type="cmd_vel_to_ackermann_drive.py"> </node>
+
+  <!-- run node for the keyboard teleoprations (pubblishes on /cmd_vel) -->
+  <node name="teleop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py"
+    output="screen"> 
+  </node>
+  
+
+  
 </launch>

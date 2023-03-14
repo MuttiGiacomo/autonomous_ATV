@@ -1,2 +1,2 @@
-ackermann_vehicle_gazebo:pysdf:teleop_twist_keyboard:test2
+teleop_twist_keyboard
 -DCATKIN_DEVEL_PREFIX=/home/agtek/autonomous_ATV/ATV_ws/devel -DCMAKE_INSTALL_PREFIX=/home/agtek/autonomous_ATV/ATV_ws/install -G Unix Makefiles

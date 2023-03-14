@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- run node for the keyboard teleoprations (pubblishes on /cmd_vel) -->
+  <node name="teleop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py"
+    output="screen"> 
+  </node>
+
+</launch>
