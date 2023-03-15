@@ -21,21 +21,23 @@ import math
 # global variables 
 
 # front-rear axle distance
-h = 1
+h = 2.2
 # right-left wheel distance
-b = 0.5
-
+b = 1.2
+# wheel radius
+r_w = 0.3175
 
 def get_steering_amgles(msg):
     
     if msg[0] != 0.0 :
         R = h/math.tan(msg[0])
+
         alpha_l = math.atan2(h*math.tan(msg[0]) , h+0.5*b*math.tan(msg[0]))
         alpha_r = math.atan2(h*math.tan(msg[0]) , h-0.5*b*math.tan(msg[0]))
 
         gamma = math.atan2(msg[2],R)
-        vel_l = math.tan(gamma) * (R+(b/2))
-        vel_r = math.tan(gamma) * (R-(b/2))
+        vel_l = math.tan(gamma) * (R+(b/2)) / r_w
+        vel_r = math.tan(gamma) * (R-(b/2)) / r_w
     else:
         alpha_l = 0.0
         alpha_r = 0.0
@@ -57,10 +59,10 @@ def callback(data):
 def main():
     global pub_left_steering , pub_right_steering , pub_left_vel , pub_right_vel
     #initialization of the node
-    rospy.init_node('ackerman_controller') 
-    sub = rospy.Subscriber('/ATV/ackermann_cmd' , AckermannDrive , callback)
-    pub_left_steering = rospy.Publisher('/ATV/FL_wheel_position_controller/command', Float32, queue_size = 1)
-    pub_right_steering = rospy.Publisher('/ATV/FR_wheel_position_controller/command', Float32, queue_size = 1)
+    rospy.init_node('ackermann_steering') 
+    sub = rospy.Subscriber('/ackermann_cmd' , AckermannDrive , callback)
+    pub_left_steering = rospy.Publisher('/ATV/FL_wheel_position_controller/command', Float64, queue_size = 1)
+    pub_right_steering = rospy.Publisher('/ATV/FR_wheel_position_controller/command', Float64, queue_size = 1)
     pub_left_vel = rospy.Publisher('/ATV/RL_wheel_velocity_controller/command', Float64, queue_size = 1)
     pub_right_vel = rospy.Publisher('/ATV/RR_wheel_velocity_controller/command', Float64, queue_size = 1)
     rate = rospy.Rate(100)
@@ -70,4 +72,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass

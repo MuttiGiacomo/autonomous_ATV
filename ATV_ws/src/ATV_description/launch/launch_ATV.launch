@@ -7,5 +7,7 @@
     
     <node name="ATV_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
           args="-urdf -param robot_description -model ATV" />
-          
+<!-- launch control: load controllers, activate cmd_vel_to_ackermann_drive node and ackermann_steering node-->
+    <include file="$(find ATV_control)/launch/ATV_control.launch"/>
+    
 </launch>

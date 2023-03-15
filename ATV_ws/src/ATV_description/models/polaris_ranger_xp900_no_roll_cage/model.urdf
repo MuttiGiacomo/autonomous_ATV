@@ -37,7 +37,7 @@
     <child link="left_rear_wheel"/>
     <origin rpy="-1.52  0    0" xyz="-0.99377  0.71562  0.34697"/>
     <axis xyz="0.00000000e+00   8.30000000e-04   1.00000000e+00"/>
-    <limit effort="100" lower="100" upper="-100" velocity="1"/>
+    <limit effort="100" lower="-100" upper="100" velocity="100.0"/>
   </joint>
 
   <joint name="right_rear_axle" type="continuous">
@@ -45,7 +45,7 @@
     <child link="right_rear_wheel"/>
     <origin rpy="1.52  0    0" xyz="-0.99377 -0.61574  0.34189"/>
     <axis xyz="0.00000000e+00   8.30000000e-04  -1.00000000e+00"/>
-    <limit effort="100" lower="100" upper="-100" velocity="1"/>
+    <limit effort="100" lower="-100" upper="100" velocity="100.0"/>
   </joint>
 
   <!--<joint name="gas_joint" type="fixed">
