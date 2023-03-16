@@ -48,44 +48,13 @@
     <limit effort="100" lower="-100" upper="100" velocity="100.0"/>
   </joint>
 
-  <!--<joint name="gas_joint" type="fixed">
-    <parent link="chassis"/>
-    <child link="gas_pedal"/>
-    <origin rpy="0  0  0" xyz="0.63     0.1      0.57999"/>
-    <axis xyz="0.7071  0     -0.7071"/>
-    <limit effort="0.0" lower="0.0" upper="0.08" velocity="0.0"/>
-  </joint>
-  
-  <joint name="brake_joint" type="fixed">
-    <parent link="chassis"/>
-    <child link="brake_pedal"/>
-    <origin rpy="0  0  0" xyz="0.64     0.27     0.57999"/>
-    <axis xyz="0.85749  0      -0.51449"/>
-    <limit effort="0.0" lower="0.0" upper="0.08" velocity="0.0"/>
-  </joint>
-  
+  <!--
   <joint name="steering_joint" type="fixed">
     <parent link="chassis"/>
     <child link="steering_wheel"/>
     <origin rpy="0   -0.87  0" xyz="0.42  0.46  1.2"/>
     <axis xyz="0  0  1"/>
     <limit effort="0.0" lower="-3.14" upper="3.14" velocity="0.0"/>
-  </joint>
-
-  <joint name="hand_brake_joint" type="fixed">
-    <parent link="chassis"/>
-    <child link="hand_brake"/>
-    <origin rpy="0  0  0" xyz="0.53   0.205  1.05"/>
-    <axis xyz="0 -1  0"/>
-    <limit effort="0.0" lower="0.0" upper="0.6" velocity="0.0"/>
-  </joint>
-
-  <joint name="FNR_switch_joint" type="fixed">
-    <parent link="chassis"/>
-    <child link="FNR_switch"/>
-    <origin rpy="0    0.25  0" xyz="0.54     0.1      1.14999"/>
-    <axis xyz="0 -1  0"/>
-    <limit effort="0.0" lower="-0.3" upper="0.3" velocity="0.0"/>
   </joint>-->
   
   <link name="chassis">
@@ -193,33 +162,9 @@
     <visual name="visual">
       <origin rpy="0       0      -1.57079" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/chasis.dae"/>
+        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polariss.dae"/>
       </geometry>
     </visual>
-    <!--<visual name="cargo_visual">
-      <origin rpy="0      0     -1.5707" xyz="-1      0      1.0323"/>
-      <geometry>
-        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-    <visual name="tailgate_visual">
-      <origin rpy="0      0     -1.5707" xyz="-1.492  0     1.03"/>
-      <geometry>
-        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-    <visual name="fl_brake_visual">
-      <origin rpy="3.1415  0      1.5707" xyz="1.12    -0.57487  0.35516"/>
-      <geometry>
-        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-    <visual name="fr_brake_visual">
-      <origin rpy="3.1415  0      1.5707" xyz="1.12     0.57487  0.35516"/>
-      <geometry>
-        <mesh filename="package://ATV_description/models/polaris_ranger_xp900_no_roll_cage/meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>-->
     <visual name="central_hump1">
       <origin rpy="0  0  0" xyz="0.55 -0.1   0.4"/>
       <geometry>
@@ -333,44 +278,6 @@
       </geometry>
     </visual>
   </link>
-  <!--<link name="gas_pedal">
-    <inertial>
-      <mass value="0.1"/>
-      <origin rpy="0  0  0" xyz="0  0  0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
-    </inertial>
-    <collision name="gas_pedal_collision">
-      <origin rpy="3.14159  1.12559  3.14159" xyz="-0.0385  0     -0.086"/>
-      <geometry>
-        <box size="0.1069000 0.0770000 0.010000"/>
-      </geometry>
-    </collision>
-    <visual name="visual">
-      <origin rpy="0      0     -1.5707" xyz="0  0  0"/>
-      <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-  </link>-->
-  <!--<link name="brake_pedal">
-    <inertial>
-      <mass value="0.1"/>
-      <origin rpy="0  0  0" xyz="0  0  0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
-    </inertial>
-    <collision name="brake_pedal_collision">
-      <origin rpy="3.14159  1.14259  3.14159" xyz="-0.04   0    -0.086"/>
-      <geometry>
-        <box size="0.063 0.08 0.01"/>
-      </geometry>
-    </collision>
-    <visual name="visual">
-      <origin rpy="0      0     -1.5707" xyz="0  0  0"/>
-      <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-  </link>-->
   <link name="fr_steering_block">
     <inertial>
       <mass value="1"/>
@@ -413,50 +320,6 @@
       <origin rpy="-0.6108   0      -1.57079" xyz="-0.03     0      -0.12082"/>
       <geometry>
         <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-  </link>
-  <link name="hand_brake">
-    <inertial>
-      <mass value="0.5"/>
-      <origin rpy="0  0  0" xyz="0  0  0"/>
-      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.05"/>
-    </inertial>
-    <collision name="hand_brake_collision">
-      <origin rpy="-0.2      0      -1.57079" xyz="0    0    0.05"/>
-      <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </collision>
-    <visual name="hand_brake_visual">
-      <origin rpy="-0.2      0      -1.57079" xyz="0    0    0.05"/>
-      <geometry>
-        <mesh filename="package://meshes/polaris.dae OR meshes/polaris.dae OR meshes/polaris.dae" scale="1.0 1.0 1.0"/>
-      </geometry>
-    </visual>
-  </link>
-  <link name="FNR_switch">
-    <inertial>
-      <mass value="0.1"/>
-      <origin rpy="0  0  0" xyz="0  0  0"/>
-      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.00006" iyz="0" izz="0.1"/>
-    </inertial>
-    <collision name="FNR_switch">
-      <origin rpy="0  0  0" xyz="0  0  0"/>
-      <geometry>
-        <box size="0.02 0.04 0.08"/>
-      </geometry>
-    </collision>
-    <visual name="FNR_switch_F">
-      <origin rpy="0  0  0" xyz="0  0  0"/>
-      <geometry>
-        <box size="0.02 0.04 0.08"/>
-      </geometry>
-    </visual>
-    <visual name="FNR_switch_R">
-      <origin rpy="0  0  0" xyz="0  0  0"/>
-      <geometry>
-        <box size="0.0199 0.0399 0.0799"/>
       </geometry>
     </visual>
   </link>-->
