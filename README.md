@@ -7,11 +7,11 @@ Roadmap:
 - enviroment setup (ros workspace + gazebo)  :white_check_mark: DONE
 - URDF model of the atv (needed for a proper Gazebo/Rviz/ROS simulation)  :white_check_mark: DONE
 - create a proper .launch file :white_check_mark: DONE
-- anable moovement using scrips :eight_pointed_black_star: ONGOING
-- definition of steering mechanism
-- driving ATV from script
-- creation of world  
-- identification of the needed/existing sensors
+- anable moovement using scrips :white_check_mark: DONE
+- definition of steering mechanism :white_check_mark: DONE
+- driving ATV from script :white_check_mark: DONE
+- creation of world :eight_pointed_black_star: ONGOING
+- identification of the needed/existing sensors :eight_pointed_black_star: ONGOING
 - start dealing with sensors and topics 
 - check for needed sensor plugins
 - wrapper for sensors
@@ -26,8 +26,9 @@ dev_ws: "ATV_ws"
 
 current packages:
 - ATV_description -> for ATV model and world visualization
-- pysdf -> needed for ASD to URDF conversion (to be deleted)
-- test2 -> contains a py_publisher and py_listener, needed for testing the enviroment (to be deleted)
+- ATV_control -> for actuator implementation
+- teleop_twist_keyboard -> command ATV from keyboard input
+- teleop_twist_joy -> command ATV from joystick input
 
 
 launch command
