@@ -29,8 +29,9 @@ def cmd_callback(data):
     steering = convert_trans_rot_vel_to_steering_angle(v, data.angular.z, wheelbase)
     
     msg = AckermannDrive()
-    msg.steering_angle = steering
+    #msg.steering_angle = steering
     msg.speed = v
+    msg.steering_angle_velocity = data.angular.z
     
     pub.publish(msg)
 
