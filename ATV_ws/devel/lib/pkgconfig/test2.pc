@@ -1,8 +1,0 @@
-prefix=/home/agtek/autonomous_ATV/ATV_ws/devel
-
-Name: test2
-Description: Description of test2
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

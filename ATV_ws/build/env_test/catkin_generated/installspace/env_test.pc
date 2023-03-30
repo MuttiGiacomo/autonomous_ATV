@@ -1,8 +1,0 @@
-prefix=/home/agtek/autonomous_ATV/ATV_ws/install
-
-Name: env_test
-Description: Description of env_test
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

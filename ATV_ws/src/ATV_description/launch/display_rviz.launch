@@ -14,6 +14,6 @@
 
 	<!-- Launch visualization in rviz -->
 	<!-- <node name="rviz" pkg="rviz" type="rviz" args="$(find ATV_description)/urdf.rviz" required="true" /> -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ATV_description)/urdf.rviz" required="true" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ATV_description)/config/urdf.rviz" required="true" />
 </launch>
 

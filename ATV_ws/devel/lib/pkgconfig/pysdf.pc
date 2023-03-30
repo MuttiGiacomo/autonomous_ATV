@@ -1,8 +1,0 @@
-prefix=/home/agtek/autonomous_ATV/ATV_ws/devel
-
-Name: pysdf
-Description: Description of pysdf
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
