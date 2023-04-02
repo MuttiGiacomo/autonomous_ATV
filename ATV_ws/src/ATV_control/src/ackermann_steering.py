@@ -32,8 +32,8 @@ def get_steering_amgles(msg):
     if msg[0] != 0.0 :
         R = h/math.tan(msg[0])
 
-        alpha_l = math.atan2(h*math.tan(msg[0]) , h+0.5*b*math.tan(msg[0]))
-        alpha_r = math.atan2(h*math.tan(msg[0]) , h-0.5*b*math.tan(msg[0]))
+        alpha_r = math.atan2(h*math.tan(msg[0]) , h+0.5*b*math.tan(msg[0]))
+        alpha_l = math.atan2(h*math.tan(msg[0]) , h-0.5*b*math.tan(msg[0]))
 
         gamma = math.atan2(msg[2],R)
         vel_l = math.tan(gamma) * (R+(b/2)) / r_w
