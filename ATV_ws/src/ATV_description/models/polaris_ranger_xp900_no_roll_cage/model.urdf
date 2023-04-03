@@ -1,5 +1,13 @@
 <?xml version="1.0" ?>
 <robot name="polaris_ranger_xp900">
+
+  <link name="base_link"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+  </joint>
+
   <joint name="left_steering_joint" type="revolute">
     <parent link="chassis"/>
     <child link="fl_steering_block"/>
@@ -58,6 +66,8 @@
   </joint>-->
   
   <link name="chassis">
+    <parent link="base_link"/>
+    <origin rpy="0   0    0" xyz="-0.99377  0.71562  0.34697"/>
     <inertial>
       <mass value="720.0"/>
       <origin rpy="0  0  0" xyz="0.1  0   0.4"/>
@@ -398,4 +408,17 @@
     </actuator>
   </transmission>
 
+  <!--<gazebo>
+    <plugin name="hector_gps" filename="libhector_gazebo_ros_gps.so">
+      <robotNamespace>/sos1</robotNamespace>
+      <updateRate>10.0</updateRate>
+      <bodyName>fl_steering_block</bodyName>
+      <frameId></frameId>
+      <topicName>gps/fix</topicName>
+      <velocityTopicName>gps/fix_velocity</velocityTopicName>
+    </plugin>
+  </gazebo>
+
+
+  -->
 </robot>

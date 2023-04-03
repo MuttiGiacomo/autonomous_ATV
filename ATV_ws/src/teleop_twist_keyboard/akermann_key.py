@@ -10,7 +10,7 @@ from ackermann_msgs.msg import AckermannDrive
 
 # Set the maximum steering angle and speed
 MAX_STEERING_ANGLE = 0.4
-MAX_SPEED = 2.0
+MAX_SPEED = 5.0
 
 # Initialize the steering angle and speed
 steering_angle = 0.0
@@ -51,9 +51,9 @@ def keyboard_input():
     elif key == "d":
         steering_angle -= 0.05
     elif key == "w":
-        speed += 10
+        speed += 0.5
     elif key == "x":
-        speed -= 10
+        speed -= 0.5
     elif key == "s":
         speed = 0
     elif key == "l":
@@ -112,6 +112,8 @@ def main():
 
         # Publish the ackermann drive message
         pub.publish(drive_msg)
+        commanded_vals = " ---- linear speed: " + str(speed) + "  ----- steering angle: " + str(steering_angle) + " ----"
+        print(commanded_vals)
 
         # Sleep to maintain the publishing rate
         rate.sleep()

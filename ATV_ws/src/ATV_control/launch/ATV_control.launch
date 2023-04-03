@@ -10,11 +10,13 @@
                                     RR_wheel_velocity_controller  
                                     RL_wheel_velocity_controller"/>
 
+  <!--<param name="robot_description" textfile="$(find ATV_description)/models/polaris_ranger_xp900_no_roll_cage/model.urdf" />-->
+
   <!-- convert joint states to TF transforms for rviz, etc -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-    respawn="false" output="screen">
-    <remap from="/joint_states" to="/ATV/joint_states" />
-  </node>
+  <!--<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">-->
+    <!--<remap from="/joint_states" to="/ATV/joint_states" />
+  </node>-->
 
   <!-- run node to convert teleoperation inputs from twist to hackerman_msgs (reads from /cmd_vel, pubblishes on /ATV/ackermann_cmd)-->
   <!--<node name="cmd_vel_to_ackermann_drive" pkg="ATV_control" type="cmd_vel_to_ackermann_drive.py"> </node>-->
