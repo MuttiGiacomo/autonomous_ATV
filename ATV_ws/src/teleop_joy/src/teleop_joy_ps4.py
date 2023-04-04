@@ -135,7 +135,7 @@ def main():
     for joystick in joysticks:
         joystick.init()
 
-    with open("src/teleop_twist_joy/src/ps4_keys.json") as file:
+    with open("src/teleop_joy/src/ps4_keys.json") as file:
         button_keys = json.load(file)
 
     # 0: Left analog horizonal, 1: Left Analog Vertical, 2: Right Analog Horizontal

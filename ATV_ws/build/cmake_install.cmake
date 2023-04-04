@@ -131,9 +131,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/agtek/autonomous_ATV/ATV_ws/build/gtest/cmake_install.cmake")
-  include("/home/agtek/autonomous_ATV/ATV_ws/build/teleop_twist_keyboard/cmake_install.cmake")
+  include("/home/agtek/autonomous_ATV/ATV_ws/build/teleop_key/cmake_install.cmake")
   include("/home/agtek/autonomous_ATV/ATV_ws/build/ATV_control/cmake_install.cmake")
-  include("/home/agtek/autonomous_ATV/ATV_ws/build/teleop_twist_joy/cmake_install.cmake")
+  include("/home/agtek/autonomous_ATV/ATV_ws/build/teleop_joy/cmake_install.cmake")
 
 endif()
 

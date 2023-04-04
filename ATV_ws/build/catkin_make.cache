@@ -1,2 +1,2 @@
-ATV_control:teleop_twist_joy:teleop_twist_keyboard
+ATV_control:teleop_joy:teleop_key
 -DCATKIN_DEVEL_PREFIX=/home/agtek/autonomous_ATV/ATV_ws/devel -DCMAKE_INSTALL_PREFIX=/home/agtek/autonomous_ATV/ATV_ws/install -G Unix Makefiles

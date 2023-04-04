@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- run node for the keyboard teleoprations (pubblishes on /ackermann_cmd) -->
+  <node name="teleop_joy_ps4" pkg="teleop_joy" type="teleop_joy_ps4.py"
+    output="screen"> 
+  </node>
+
+</launch>

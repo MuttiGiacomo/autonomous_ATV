@@ -279,9 +279,6 @@ UBUNTU:BOOL=TRUE
 UBUNTU_BIONIC:BOOL=TRUE
 
 //Path to a file.
-_file_name:FILEPATH=/home/agtek/autonomous_ATV/ATV_ws/src/teleop_twist_joy/test/turbo_angular_enable_joy_with_rosparam_map.test
-
-//Path to a file.
 _gmock_INCLUDES:FILEPATH=/usr/include/gmock/gmock.h
 
 //Path to a file.
@@ -316,9 +313,6 @@ gennodejs_DIR:PATH=/opt/ros/melodic/share/gennodejs/cmake
 
 //The directory containing a CMake configuration file for genpy.
 genpy_DIR:PATH=/opt/ros/melodic/share/genpy/cmake
-
-//The directory containing a CMake configuration file for geometry_msgs.
-geometry_msgs_DIR:PATH=/opt/ros/melodic/share/geometry_msgs/cmake
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/gtest/googlemock
@@ -370,7 +364,7 @@ gtest_hide_internal_symbols:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
+lib:FILEPATH=/opt/ros/melodic/lib/librostime.so
 
 //The directory containing a CMake configuration file for message_generation.
 message_generation_DIR:PATH=/opt/ros/melodic/share/message_generation/cmake
@@ -378,59 +372,32 @@ message_generation_DIR:PATH=/opt/ros/melodic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
-//The directory containing a CMake configuration file for rosconsole.
-rosconsole_DIR:PATH=/opt/ros/melodic/share/rosconsole/cmake
-
-//The directory containing a CMake configuration file for roscpp.
-roscpp_DIR:PATH=/opt/ros/melodic/share/roscpp/cmake
-
 //The directory containing a CMake configuration file for roscpp_serialization.
 roscpp_serialization_DIR:PATH=/opt/ros/melodic/share/roscpp_serialization/cmake
 
 //The directory containing a CMake configuration file for roscpp_traits.
 roscpp_traits_DIR:PATH=/opt/ros/melodic/share/roscpp_traits/cmake
 
-//The directory containing a CMake configuration file for rosgraph_msgs.
-rosgraph_msgs_DIR:PATH=/opt/ros/melodic/share/rosgraph_msgs/cmake
-
-//The directory containing a CMake configuration file for roslaunch.
-roslaunch_DIR:PATH=/opt/ros/melodic/share/roslaunch/cmake
-
-//The directory containing a CMake configuration file for roslint.
-roslint_DIR:PATH=/opt/ros/melodic/share/roslint/cmake
-
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/melodic/share/rospy/cmake
 
-//The directory containing a CMake configuration file for rostest.
-rostest_DIR:PATH=/opt/ros/melodic/share/rostest/cmake
-
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/melodic/share/rostime/cmake
-
-//The directory containing a CMake configuration file for sensor_msgs.
-sensor_msgs_DIR:PATH=/opt/ros/melodic/share/sensor_msgs/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
 //Value Computed by CMake
-teleop_twist_joy_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/teleop_twist_joy
-
-//Dependencies for the target
-teleop_twist_joy_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+teleop_joy_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/teleop_joy
 
 //Value Computed by CMake
-teleop_twist_joy_SOURCE_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/src/teleop_twist_joy
+teleop_joy_SOURCE_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/src/teleop_joy
 
 //Value Computed by CMake
-teleop_twist_keyboard_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/teleop_twist_keyboard
+teleop_key_BINARY_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/build/teleop_key
 
 //Value Computed by CMake
-teleop_twist_keyboard_SOURCE_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/src/teleop_twist_keyboard
-
-//The directory containing a CMake configuration file for xmlrpcpp.
-xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
+teleop_key_SOURCE_DIR:STATIC=/home/agtek/autonomous_ATV/ATV_ws/src/teleop_key
 
 
 ########################
