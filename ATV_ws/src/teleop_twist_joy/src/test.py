@@ -1,43 +1,47 @@
+#!/usr/bin/env python
+
+import rospy
+import sys
 import pygame
 import json, os
+from ackermann_msgs.msg import AckermannDrive
+
+# Set the maximum steering angle and speed
+MAX_STEERING_ANGLE = 0.4
+MAX_SPEED = 5.0
+
+# Initialize the steering angle and speed
+steering_angle = 0.0
+speed = 0.0
 
 ################################# LOAD UP A BASIC WINDOW #################################
 pygame.init()
-DISPLAY_W, DISPLAY_H = 960, 570
-canvas = pygame.Surface((DISPLAY_W,DISPLAY_H))
-window = pygame.display.set_mode(((DISPLAY_W,DISPLAY_H)))
-running = True
-player = pygame.Rect(DISPLAY_W/2, DISPLAY_H/2, 60,60)
-LEFT, RIGHT, UP, DOWN = False, False, False, False
+
 clock = pygame.time.Clock()
 color = 0
 ###########################################################################################
 
-#Initialize controller
-joysticks = []
-for i in range(pygame.joystick.get_count()):
-    joysticks.append(pygame.joystick.Joystick(i))
-for joystick in joysticks:
-    joystick.init()
 
-with open(os.path.join("ps4_keys.json"), 'r+') as file:
-    button_keys = json.load(file)
-# 0: Left analog horizonal, 1: Left Analog Vertical, 2: Right Analog Horizontal
-# 3: Right Analog Vertical 4: Left Trigger, 5: Right Trigger
-analog_keys = {0:0, 1:0, 2:0, 3:0, 4:-1, 5: -1 }
+
+
+
+
 
 # START OF GAME LOOP
-while running:
+def run_control(button_keys,analog_keys):
+    global LEFT, RIGHT,VEL_CHANGE, steering_angle, speed
+    LEFT, RIGHT, VEL_UP, VEL_DOWN = False,  False, False,  False
     ################################# CHECK PLAYER INPUT #################################
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            sys.exit(0)
         if event.type == pygame.KEYDOWN:
             ############### UPDATE SPRITE IF SPACE IS PRESSED #################################
             pass
-
         # HANDLES BUTTON PRESSES
         if event.type == pygame.JOYBUTTONDOWN:
+            if event.button == button_keys['circle']:
+                speed = 0.0
             if event.button == button_keys['left_arrow']:
                 LEFT = True
             if event.button == button_keys['right_arrow']:
@@ -56,12 +60,11 @@ while running:
                 DOWN = False
             if event.button == button_keys['up_arrow']:
                 UP = False
-
         #HANDLES ANALOG INPUTS
         if event.type == pygame.JOYAXISMOTION:
             analog_keys[event.axis] = event.value
             # print(analog_keys)
-            # Horizontal Analog
+            # Horizontal - left Analog
             if abs(analog_keys[0]) > .4:
                 if analog_keys[0] < -.7:
                     LEFT = True
@@ -72,45 +75,94 @@ while running:
                 else:
                     RIGHT = False
             # Vertical Analog
-            if abs(analog_keys[1]) > .4:
-                if analog_keys[1] < -.7:
-                    UP = True
+            if abs(analog_keys[4]) > .4:
+                if analog_keys[4] < -.7:
+                    VEL_UP = True
                 else:
-                    UP = False
-                if analog_keys[1] > .7:
-                    DOWN = True
+                    VEL_UP = False
+                if analog_keys[4] > .7:
+                    VEL_DOWN = True
                 else:
-                    DOWN = False
+                    VEL_DOWN = False
                 # Triggers
-            if analog_keys[4] > 0:  # Left trigger
-                color += 2
-            if analog_keys[5] > 0:  # Right Trigger
-                color -= 2
-
-
-
-
-
+            #if analog_keys[3] > 0:  # Left trigger
+            #    VEL_UP += True
+            #if analog_keys[5] > 0:  # Right Trigger
+            #    VEL_DOWN -= True
 
     # Handle Player movement
     if LEFT:
-        player.x -=5 #*(-1 * analog_keys[0])
+        steering_angle += 0.05 #*(-1 * analog_keys[0])
     if RIGHT:
-        player.x += 5 #* analog_keys[0]
-    if UP:
-        player.y -= 5
-    if DOWN:
-        player.y += 5
+        steering_angle -= 0.05 #* analog_keys[0]
+    if VEL_UP:
+        speed += 0.5
+    if VEL_DOWN:
+        speed -= 0.5
 
-    if color < 0:
-        color = 0
-    elif color > 255:
-        color = 255
+    steering_angle = max(-MAX_STEERING_ANGLE, min(steering_angle, MAX_STEERING_ANGLE))
+    speed = max(-MAX_SPEED, min(speed, MAX_SPEED))
+
+    return(steering_angle,speed)
 
 
-    ################################# UPDATE WINDOW AND DISPLAY #################################
-    canvas.fill((255,255,255))
-    pygame.draw.rect(canvas, (0,0 + color,255), player)
-    window.blit(canvas, (0,0))
-    clock.tick(60)
-    pygame.display.update()
+
+
+def main():
+    
+
+    msg = """
+    
+    joystick controller started:
+    use:    left stick for steering
+            R2 to speed-up
+            L2 to breake
+    """
+
+    # Initialize the ROS node
+    rospy.init_node("joystick_control")
+
+    # Create a publisher for the ackermann drive message
+    pub = rospy.Publisher("/ackermann_cmd", AckermannDrive, queue_size=1)
+
+    # Set the publishing rate to 10 Hz
+    rate = rospy.Rate(10)
+
+    #Initialize controller
+    joysticks = []
+    for i in range(pygame.joystick.get_count()):
+        joysticks.append(pygame.joystick.Joystick(i))
+    for joystick in joysticks:
+        joystick.init()
+
+    with open("src/teleop_twist_joy/src/ps4_keys.json") as file:
+        button_keys = json.load(file)
+
+    # 0: Left analog horizonal, 1: Left Analog Vertical, 2: Right Analog Horizontal
+    # 3: Right Analog Vertical 4: Left Trigger, 5: Right Trigger
+    analog_keys = {0:0, 1:0, 2:0, 3:0, 4: -1, 5: -1 }
+
+    # Loop until the ROS node is shutdown
+    while not rospy.is_shutdown(): 
+
+        print(msg)
+
+
+        steering_angle,speed = run_control(button_keys,analog_keys)
+
+        # Create an ackermann drive message with the current steering angle and speed
+        drive_msg = AckermannDrive()
+        drive_msg.steering_angle = steering_angle
+        drive_msg.speed = speed
+
+        # Publish the ackermann drive message
+        pub.publish(drive_msg)
+
+        # Sleep to maintain the publishing rate
+        rate.sleep()
+
+if __name__ == "__main__":
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass
