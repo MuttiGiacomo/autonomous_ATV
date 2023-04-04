@@ -95,7 +95,7 @@ def main():
 
     # Loop until the ROS node is shutdown
     while not rospy.is_shutdown():
-        # Read input from the keyboardù
+        # Read input from the keyboard
 
         print(msg)
 
