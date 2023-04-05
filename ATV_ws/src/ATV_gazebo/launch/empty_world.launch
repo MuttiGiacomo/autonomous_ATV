@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+
+<!--  needed in agriculure_world  -->
+
 <launch>
 
   <!-- these are the arguments you can pass this launch file, for example paused:=true -->
@@ -19,10 +22,10 @@
   </include>
 
   <!-- Spawn a robot into Gazebo -->
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find agribot_control)/urdf/agribot.xacro'"/>
+  <!--<param name="robot_description" command="$(find xacro)/xacro.py '$(find agribot_control)/urdf/agribot.xacro'"/>
   <node name="agribot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" respawn="false"
    args="-x 0 -y 0 -z 0 -Y 0 -urdf -param robot_description -model agribot">
-  </node>
+  </node>-->
 
   <!-- ros_control pioneer launch file -->
 <!--   <include file="$(find agribot_control)/launch/agribot_control.launch" />
