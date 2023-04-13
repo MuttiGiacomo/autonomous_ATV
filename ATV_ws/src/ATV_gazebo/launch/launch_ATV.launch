@@ -17,7 +17,11 @@
 	<!-- Starting robot state publish which will publish tf -->
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-<!-- launch control: load controllers, activate cmd_vel_to_ackermann_drive node and ackermann_steering node-->
+    <!-- launch control: load controllers, activate cmd_vel_to_ackermann_drive node and ackermann_steering node-->
     <include file="$(find ATV_control)/launch/ATV_control.launch"/>
+
+    <!-- launch encoder sensors node -->
+    <node name="encoders" pkg="ATV_control" type="encoders.py" 
+        ns="/sensors"/>
     
 </launch>

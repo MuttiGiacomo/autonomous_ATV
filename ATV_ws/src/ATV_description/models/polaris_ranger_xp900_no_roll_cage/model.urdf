@@ -408,17 +408,4 @@
     </actuator>
   </transmission>
 
-  <!--<gazebo>
-    <plugin name="hector_gps" filename="libhector_gazebo_ros_gps.so">
-      <robotNamespace>/sos1</robotNamespace>
-      <updateRate>10.0</updateRate>
-      <bodyName>fl_steering_block</bodyName>
-      <frameId></frameId>
-      <topicName>gps/fix</topicName>
-      <velocityTopicName>gps/fix_velocity</velocityTopicName>
-    </plugin>
-  </gazebo>
-
-
-  -->
 </robot>

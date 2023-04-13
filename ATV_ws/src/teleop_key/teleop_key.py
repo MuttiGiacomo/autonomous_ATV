@@ -5,7 +5,7 @@ import signal
 import sys
 import tty
 import termios
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64, Bool
 from ackermann_msgs.msg import AckermannDrive
 
 # Set the maximum steering angle and speed
@@ -40,7 +40,8 @@ def signal_handler(sig, frame):
     sys.exit(0)
 
 def keyboard_input():
-    global steering_angle, speed
+    global steering_angle, speed, brake_activated
+    brake_activated = True
 
     # Read input from the keyboard
     key = get_input_char()
@@ -56,6 +57,12 @@ def keyboard_input():
         speed -= 0.5
     elif key == "s":
         speed = 0
+    elif key == "p":
+        if brake_activated:
+            brake_activated = False
+        else:
+            brake_activated = True
+
     elif key == "l":
         sys.exit(0)
 
@@ -78,6 +85,7 @@ def main():
 
     w/x : increase/decrease linear velocity
     a/d : increase/decrease angular velocity
+    p : park (activate hand brake)
     space key, s : force stop
     CTRL-C to quit
 
@@ -89,6 +97,7 @@ def main():
 
     # Create a publisher for the ackermann drive message
     pub = rospy.Publisher("/ackermann_cmd", AckermannDrive, queue_size=1)
+    brake_bool_pub = rospy.Publisher("/active_hand_brake", Bool, queue_size=1)
 
     # Set the publishing rate to 10 Hz
     rate = rospy.Rate(10)
