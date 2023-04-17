@@ -128,9 +128,9 @@
       </geometry>
     </collision>
     <collision name="engine">
-      <origin rpy="0  0  0" xyz="1.12  0    0.7"/>
+      <origin rpy="0  0  0" xyz="1.02  0    0.7"/>
       <geometry>
-        <box size="0.58 1.3 0.8"/>
+        <box size="0.48 1.3 0.8"/>
       </geometry>
     </collision>
     <collision name="central_hump1_collision">
@@ -408,14 +408,20 @@
     </actuator>
   </transmission>
 
-  <joint name="laser_joint" type="fixed">
+
+<!--       SENSORS          -->
+
+
+<!--  LIDAR  sensor  -->
+  <joint name="sensorr_joint" type="fixed">
     <parent link="chassis"/>
     <child link="laser_frame"/>
-    <origin xyz="1.3 0 0.9" rpy="0 0 0"/>
+    <origin xyz="1.3 0 0.7" rpy="0 0 0"/>
   </joint>
 
   <link name="laser_frame">
     <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
             <cylinder radius="0.05" length="0.04"/>
         </geometry>
@@ -432,7 +438,7 @@
   </link>
 
     <gazebo reference="laser_frame">
-      <sensor type="gpu_ray" name="head_hokuyo_sensor">
+      <sensor type="ray" name="head_hokuyo_sensor">
         <pose>0 0 0 0 0 0</pose>
         <visualize>true</visualize>
         <update_rate>40</update_rate>
@@ -455,19 +461,22 @@
             <!-- Noise parameters based on published spec for Hokuyo laser
                 achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
                 stddev of 0.01m will put 99.7% of samples within 0.03m of the true
-                reading. -->
+                reading. --> 
             <mean>0.0</mean>
             <stddev>0.01</stddev>
           </noise>
         </ray>
-        <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+        <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
           <topicName>/sensors/laser/scan</topicName>
-          <frameName>chassis</frameName>
+          <frameName>laser_frame</frameName>
         </plugin>
       </sensor>
     </gazebo>
 
+   
 
+
+<!--  IMU  sensor  -->
 
   <joint name="imu_joint" type="fixed">
     <parent link="chassis"/>
@@ -500,7 +509,7 @@
       <visualize>true</visualize>
       <topic>/sensors/imu</topic>
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-        <topicName>imu</topicName>
+        <topicName>sensors/imu</topicName>
         <bodyName>imu_frame</bodyName>
         <updateRateHZ>10.0</updateRateHZ>
         <gaussianNoise>0.0</gaussianNoise>
@@ -514,73 +523,193 @@
   </gazebo>
 
 
-  <joint name="kinect_joint" type="fixed">
-    <parent link="chassis"/>
-    <child link="kinect_frame"/>
-    <origin xyz="1.3 0 1" rpy="0 0 0"/>
-  </joint>
+  
+<!-- Kinect  sensor  -->
 
-  <link name="kinect_frame">
-    <visual>
-        <geometry>
-            <box size="0.03 0.07 0.03"/>
-        </geometry>
-        <material name="blue"/>
-    </visual>
-    <collision>
-        <geometry>
-            <box size="0.06 0.06 0.03"/>
-        </geometry>
-    </collision>
-    <cylinder mass="0.1" length="0.04" radius="0.05">
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-    </cylinder>
+  <link name="kinect_link">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <visual>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+              <box size="0.07 0.3 0.09"/>
+          </geometry>
+      </visual>
+      <collision>
+          <geometry>
+              <box size="0.07 0.3 0.09"/>
+          </geometry>
+      </collision>
   </link>
 
-  <gazebo reference="kinect_frame">
-  <sensor name="kinect_camera" type="depth">
-    <update_rate>20</update_rate>
-    <camera>
-      <horizontal_fov>1.047198</horizontal_fov>
-      <image>
-        <!--<width>640</width>
-        <height>480</height>-->
-        <width>1280</width>
-        <height>960</height>
-        <format>R8G8B8</format>
-      </image>
-      <clip>
-        <near>0.05</near>
-        <far>3</far>
-      </clip>
-    </camera>
-    <plugin name="kinect_controller" filename="libgazebo_ros_openni_kinect.so">
-      <baseline>0.2</baseline>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>1.0</updateRate>
-      <visualize>true</visualize>
-      <cameraName>kinect_ir</cameraName>
-      <imageTopicName>/kinect/color/image_raw</imageTopicName>
-      <cameraInfoTopicName>/kinect/color/camera_info</cameraInfoTopicName>
-      <depthImageTopicName>/kinect/depth/image_raw</depthImageTopicName>
-      <depthImageInfoTopicName>/kinect/depth/camera_info</depthImageInfoTopicName>
-      <pointCloudTopicName>/kinect/depth/points</pointCloudTopicName>
-      <frameName>kinect_frame</frameName>
-      <pointCloudCutoff>0.5</pointCloudCutoff>
-      <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
-      <distortionK1>0.00000001</distortionK1>
-      <distortionK2>0.00000001</distortionK2>
-      <distortionK3>0.00000001</distortionK3>
-      <distortionT1>0.00000001</distortionT1>
-      <distortionT2>0.00000001</distortionT2>
-      <CxPrime>0</CxPrime>
-      <Cx>0</Cx>
-      <Cy>0</Cy>
-      <focalLength>0</focalLength>
-      <hackBaseline>0</hackBaseline>
-    </plugin>
-  </sensor>
-</gazebo>
+  <joint name="kinect_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708"/>
+      <parent link="kinect_link"/>
+      <child link="kinect_frame_optical"/>
+  </joint>
 
+  <link name="kinect_frame_optical"/>
+
+  <joint name="kinect_frame_joint" type="fixed">
+      <origin xyz="1.3 0 1"
+              rpy="0 0 0" />
+      <parent link="chassis"/>
+      <child link="kinect_link"/>
+  </joint>
+
+  <gazebo reference="kinect_link">
+    <sensor name="kinect_camera" type="depth">
+      <update_rate>20</update_rate>
+      <camera>
+        <horizontal_fov>1.047198</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>  
+        <clip>
+          <near>0.05</near>
+          <far>3</far>
+        </clip>
+      </camera>
+      <plugin name="kinect_controller" filename="libgazebo_ros_openni_kinect.so">
+        <baseline>0.2</baseline>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>1.0</updateRate>
+        <visualize>true</visualize>
+        <cameraName>kinect_ir</cameraName>
+        <imageTopicName>/kinect/color/image_raw</imageTopicName>
+        <cameraInfoTopicName>/kinect/color/camera_info</cameraInfoTopicName>
+        <depthImageTopicName>/kinect/depth/image_raw</depthImageTopicName>
+        <depthImageInfoTopicName>/kinect/depth/camera_info</depthImageInfoTopicName>
+        <pointCloudTopicName>/kinect/depth/points</pointCloudTopicName>
+        <frameName>kinect_frame_optical</frameName>
+        <pointCloudCutoff>0.5</pointCloudCutoff>
+        <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+        <distortionK1>0.00000001</distortionK1>
+        <distortionK2>0.00000001</distortionK2>
+        <distortionK3>0.00000001</distortionK3>
+        <distortionT1>0.00000001</distortionT1>
+        <distortionT2>0.00000001</distortionT2>
+        <CxPrime>0</CxPrime>
+        <Cx>0</Cx>
+        <Cy>0</Cy>
+        <focalLength>0</focalLength>
+        <hackBaseline>0</hackBaseline>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+<!--    GPS sensor    -->
+  <joint name="gps_joint" type="fixed">
+    <parent link="chassis"/>
+    <child link="gps_link"/>
+  </joint>
+
+  <link name="gps_link">
+    <collision>
+      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+    </inertial>
+  </link>
+
+
+  <gazebo>
+    <plugin name="novatel_gps_sim" filename="libhector_gazebo_ros_gps.so">
+      <alwaysOn>1</alwaysOn>
+      <updateRate>10.0</updateRate>
+      <bodyName>chassis</bodyName>
+      <topicName>fix</topicName>
+      <velocityTopicName>fix_velocity</velocityTopicName>
+      <drift>5.0 5.0 5.0</drift>
+      <gaussianNoise>0.1 0.1 0.1</gaussianNoise>
+      <velocityDrift>0 0 0</velocityDrift>
+      <velocityGaussianNoise>0.1 0.1 0.1</velocityGaussianNoise>
+      <pose>0.63 0.08 1.55 0 0 0</pose>
+    </plugin>
+  </gazebo>
+
+
+
+<!--   camera for the driver's point of view   -->
+  <joint name="camera_joint" type="fixed">
+      <axis xyz="0 1 0" />
+      <origin xyz="0 0.3 1.6" rpy="0 0 0"/>
+      <parent link="chassis"/>
+      <child link="camera_link"/>
+  </joint>
+
+  <link name="camera_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.3 0.3 0.3"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+                That pixel's noise value is added to each of its color
+                channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>sensors/driver_pov</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
     
 </robot>
