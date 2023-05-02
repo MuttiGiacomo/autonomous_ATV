@@ -7,5 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/agtek/autonomous_ATV/ATV_ws/build'
-export ROS_PACKAGE_PATH='/home/agtek/autonomous_ATV/ATV_ws/src:/opt/ros/melodic/share'
+export LD_LIBRARY_PATH='/opt/ros/melodic/lib'
+export PKG_CONFIG_PATH='/opt/ros/melodic/lib/pkgconfig'
+export PWD='/home/giacomo/autonomous_ATV/ATV_ws/build'
+export PYTHONPATH='/opt/ros/melodic/lib/python2.7/dist-packages'

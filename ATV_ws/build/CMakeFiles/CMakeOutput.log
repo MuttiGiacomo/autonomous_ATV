@@ -1,4 +1,4 @@
-The system is: Linux - 5.4.0-146-generic - x86_64
+The system is: Linux - 5.15.90.1-microsoft-standard-WSL2 - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c2ad7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c2ad7.dir/build.make CMakeFiles/cmTC_c2ad7.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c2ad7.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_c2ad7.dir/testCCompiler.c.o   -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_c2ad7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2ad7.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c2ad7.dir/testCCompiler.c.o  -o cmTC_c2ad7 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_587f0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_587f0.dir/build.make CMakeFiles/cmTC_587f0.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_587f0.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_587f0.dir/testCCompiler.c.o   -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_587f0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_587f0.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_587f0.dir/testCCompiler.c.o  -o cmTC_587f0 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_12415/fast"
-/usr/bin/make -f CMakeFiles/cmTC_12415.dir/build.make CMakeFiles/cmTC_12415.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_12415
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12415.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o  -o cmTC_12415 
+Run Build Command:"/usr/bin/make" "cmTC_d7024/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d7024.dir/build.make CMakeFiles/cmTC_d7024.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_d7024
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7024.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o  -o cmTC_d7024 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,24 +61,24 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_12415' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHtlm9a.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_12415 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_12415' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_d7024' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0Q84ZH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d7024 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_d7024' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_12415/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_12415.dir/build.make CMakeFiles/cmTC_12415.dir/build]
-  ignore line: [make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_12415]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12415.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o  -o cmTC_12415 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_d7024/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_d7024.dir/build.make CMakeFiles/cmTC_d7024.dir/build]
+  ignore line: [make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_d7024]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7024.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o  -o cmTC_d7024 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_12415' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccHtlm9a.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_12415 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_d7024' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc0Q84ZH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d7024 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccHtlm9a.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc0Q84ZH.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -115,7 +115,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_12415] ==> ignore
+    arg [cmTC_d7024] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -127,7 +127,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_12415.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_d7024.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -157,17 +157,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_01dda/fast"
-/usr/bin/make -f CMakeFiles/cmTC_01dda.dir/build.make CMakeFiles/cmTC_01dda.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_01dda.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_01dda.dir/feature_tests.c.o   -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_01dda
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01dda.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_01dda.dir/feature_tests.c.o  -o cmTC_01dda 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_66af6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_66af6.dir/build.make CMakeFiles/cmTC_66af6.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_66af6.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_66af6.dir/feature_tests.c.o   -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_66af6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66af6.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_66af6.dir/feature_tests.c.o  -o cmTC_66af6 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -177,17 +177,17 @@ make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/C
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fcf52/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fcf52.dir/build.make CMakeFiles/cmTC_fcf52.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fcf52.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_fcf52.dir/feature_tests.c.o   -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_fcf52
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fcf52.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_fcf52.dir/feature_tests.c.o  -o cmTC_fcf52 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_8e59d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8e59d.dir/build.make CMakeFiles/cmTC_8e59d.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8e59d.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_8e59d.dir/feature_tests.c.o   -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_8e59d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e59d.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8e59d.dir/feature_tests.c.o  -o cmTC_8e59d 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -197,17 +197,17 @@ make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/C
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_569d5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_569d5.dir/build.make CMakeFiles/cmTC_569d5.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_569d5.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_569d5.dir/feature_tests.c.o   -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_569d5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_569d5.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_569d5.dir/feature_tests.c.o  -o cmTC_569d5 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_862a8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_862a8.dir/build.make CMakeFiles/cmTC_862a8.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_862a8.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_862a8.dir/feature_tests.c.o   -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_862a8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_862a8.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_862a8.dir/feature_tests.c.o  -o cmTC_862a8 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -215,30 +215,30 @@ make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/C
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1a4e7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1a4e7.dir/build.make CMakeFiles/cmTC_1a4e7.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_1a4e7.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_1a4e7.dir/testCXXCompiler.cxx.o -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_1a4e7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a4e7.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_1a4e7.dir/testCXXCompiler.cxx.o  -o cmTC_1a4e7 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_37f0c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_37f0c.dir/build.make CMakeFiles/cmTC_37f0c.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_37f0c.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_37f0c.dir/testCXXCompiler.cxx.o -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_37f0c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37f0c.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_37f0c.dir/testCXXCompiler.cxx.o  -o cmTC_37f0c 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ca2f0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ca2f0.dir/build.make CMakeFiles/cmTC_ca2f0.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_ca2f0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca2f0.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ca2f0 
+Run Build Command:"/usr/bin/make" "cmTC_f4c50/fast"
+/usr/bin/make -f CMakeFiles/cmTC_f4c50.dir/build.make CMakeFiles/cmTC_f4c50.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_f4c50
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4c50.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f4c50 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -250,24 +250,24 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ca2f0' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEdzUUx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ca2f0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ca2f0' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f4c50' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2mpalM.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f4c50 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f4c50' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ca2f0/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ca2f0.dir/build.make CMakeFiles/cmTC_ca2f0.dir/build]
-  ignore line: [make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_ca2f0]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ca2f0.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_ca2f0 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_f4c50/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_f4c50.dir/build.make CMakeFiles/cmTC_f4c50.dir/build]
+  ignore line: [make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_f4c50]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4c50.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f4c50 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -279,13 +279,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_ca2f0' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEdzUUx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_ca2f0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f4c50' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2mpalM.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f4c50 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccEdzUUx.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc2mpalM.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -304,7 +304,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_ca2f0] ==> ignore
+    arg [cmTC_f4c50] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -316,7 +316,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_ca2f0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_f4c50.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -342,17 +342,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_04c7c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_04c7c.dir/build.make CMakeFiles/cmTC_04c7c.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_04c7c.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_04c7c.dir/feature_tests.cxx.o -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_04c7c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_04c7c.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_04c7c.dir/feature_tests.cxx.o  -o cmTC_04c7c 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_9d654/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9d654.dir/build.make CMakeFiles/cmTC_9d654.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_9d654.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_9d654.dir/feature_tests.cxx.o -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_9d654
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d654.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_9d654.dir/feature_tests.cxx.o  -o cmTC_9d654 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -415,17 +415,17 @@ make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/C
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ae9e1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ae9e1.dir/build.make CMakeFiles/cmTC_ae9e1.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ae9e1.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_ae9e1.dir/feature_tests.cxx.o -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ae9e1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae9e1.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ae9e1.dir/feature_tests.cxx.o  -o cmTC_ae9e1 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_403bd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_403bd.dir/build.make CMakeFiles/cmTC_403bd.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_403bd.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_403bd.dir/feature_tests.cxx.o -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_403bd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_403bd.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_403bd.dir/feature_tests.cxx.o  -o cmTC_403bd 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -488,17 +488,17 @@ make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/C
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7f927/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7f927.dir/build.make CMakeFiles/cmTC_7f927.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_7f927.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_7f927.dir/feature_tests.cxx.o -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_7f927
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f927.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_7f927.dir/feature_tests.cxx.o  -o cmTC_7f927 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_3e9c3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3e9c3.dir/build.make CMakeFiles/cmTC_3e9c3.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3e9c3.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_3e9c3.dir/feature_tests.cxx.o -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3e9c3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3e9c3.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3e9c3.dir/feature_tests.cxx.o  -o cmTC_3e9c3 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -561,17 +561,17 @@ make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/C
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_51ca3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_51ca3.dir/build.make CMakeFiles/cmTC_51ca3.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_51ca3.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_51ca3.dir/feature_tests.cxx.o -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_51ca3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51ca3.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_51ca3.dir/feature_tests.cxx.o  -o cmTC_51ca3 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_ab5af/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ab5af.dir/build.make CMakeFiles/cmTC_ab5af.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ab5af.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_ab5af.dir/feature_tests.cxx.o -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ab5af
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab5af.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ab5af.dir/feature_tests.cxx.o  -o cmTC_ab5af 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -632,30 +632,30 @@ make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/C
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
 Determining if the include file pthread.h exists passed with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2604b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2604b.dir/build.make CMakeFiles/cmTC_2604b.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2604b.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_2604b.dir/CheckIncludeFile.c.o   -c /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_2604b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2604b.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2604b.dir/CheckIncludeFile.c.o  -o cmTC_2604b 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_74cd3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_74cd3.dir/build.make CMakeFiles/cmTC_74cd3.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_74cd3.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_74cd3.dir/CheckIncludeFile.c.o   -c /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_74cd3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74cd3.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_74cd3.dir/CheckIncludeFile.c.o  -o cmTC_74cd3 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
-Change Dir: /home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
+Change Dir: /home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_00417/fast"
-/usr/bin/make -f CMakeFiles/cmTC_00417.dir/build.make CMakeFiles/cmTC_00417.dir/build
-make[1]: Entering directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_00417.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_00417.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_00417
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00417.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_00417.dir/CheckFunctionExists.c.o  -o cmTC_00417 -lpthread 
-make[1]: Leaving directory '/home/agtek/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_0de1c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0de1c.dir/build.make CMakeFiles/cmTC_0de1c.dir/build
+make[1]: Entering directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0de1c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0de1c.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0de1c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0de1c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_0de1c.dir/CheckFunctionExists.c.o  -o cmTC_0de1c -lpthread 
+make[1]: Leaving directory '/home/giacomo/autonomous_ATV/ATV_ws/build/CMakeFiles/CMakeTmp'
 
 

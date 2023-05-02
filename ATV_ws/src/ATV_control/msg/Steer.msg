@@ -1,2 +1,0 @@
-float32 lin_velocity
-float32 turn_radius
