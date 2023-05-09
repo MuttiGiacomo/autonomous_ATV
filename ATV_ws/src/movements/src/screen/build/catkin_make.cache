@@ -1,0 +1,2 @@
+screen
+-DCATKIN_DEVEL_PREFIX=/home/atv-remote/screen/devel -DCMAKE_INSTALL_PREFIX=/home/atv-remote/screen/install -G Unix Makefiles

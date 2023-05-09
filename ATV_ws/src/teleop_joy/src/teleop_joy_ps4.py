@@ -42,24 +42,24 @@ def run_control(button_keys,analog_keys):
         if event.type == pygame.JOYBUTTONDOWN:
             if event.button == button_keys['circle']:
                 speed = 0.0
-            if event.button == button_keys['left_arrow']:
-                LEFT = True
-            if event.button == button_keys['right_arrow']:
-                RIGHT = True
-            if event.button == button_keys['down_arrow']:
-                DOWN = True
-            if event.button == button_keys['up_arrow']:
-                UP = True
-        # HANDLES BUTTON RELEASES
-        if event.type == pygame.JOYBUTTONUP:
-            if event.button == button_keys['left_arrow']:
-                LEFT = False
-            if event.button == button_keys['right_arrow']:
-                RIGHT = False
-            if event.button == button_keys['down_arrow']:
-                DOWN = False
-            if event.button == button_keys['up_arrow']:
-                UP = False
+        #    if event.button == button_keys['left_arrow']:
+        #        LEFT = True
+        #    if event.button == button_keys['right_arrow']:
+        #        RIGHT = True
+        #    if event.button == button_keys['down_arrow']:
+        #        VEL_DOWN = True
+        #    if event.button == button_keys['up_arrow']:
+        #        VEL_UP = True
+        ## HANDLES BUTTON RELEASES
+        #if event.type == pygame.JOYBUTTONUP:
+        #    if event.button == button_keys['left_arrow']:
+        #        LEFT = False
+        #    if event.button == button_keys['right_arrow']:
+        #        RIGHT = False
+        #    if event.button == button_keys['down_arrow']:
+        #        VEL_DOWN = False
+        #    if event.button == button_keys['up_arrow']:
+        #        VEL_UP = False
         #HANDLES ANALOG INPUTS
         if event.type == pygame.JOYAXISMOTION:
             analog_keys[event.axis] = event.value
@@ -75,20 +75,24 @@ def run_control(button_keys,analog_keys):
                 else:
                     RIGHT = False
             # Vertical Analog
-            if abs(analog_keys[4]) > .4:
-                if analog_keys[4] < -.7:
-                    VEL_UP = True
-                else:
-                    VEL_UP = False
-                if analog_keys[4] > .7:
-                    VEL_DOWN = True
-                else:
-                    VEL_DOWN = False
-                # Triggers
-            #if analog_keys[3] > 0:  # Left trigger
-            #    VEL_UP += True
-            #if analog_keys[5] > 0:  # Right Trigger
-            #    VEL_DOWN -= True
+            #if abs(analog_keys[4]) > .4:
+            #    if analog_keys[4] < -.7:
+            #        VEL_UP = True
+            #    else:
+            #        VEL_UP = False
+            #    if analog_keys[4] > .7:
+            #        VEL_DOWN = True
+            #    else:
+            #        VEL_DOWN = False
+            #    # Triggers
+            if analog_keys[2] > 0.4:  # Left trigger
+                VEL_DOWN = True
+            else:
+                VEL_DOWN = False
+            if analog_keys[5] > 0.4:  # Right Trigger
+                VEL_UP = True
+            else:
+                VEL_UP = False
 
     # Handle Player movement
     if LEFT:
@@ -157,6 +161,10 @@ def main():
 
         # Publish the ackermann drive message
         pub.publish(drive_msg)
+
+        # print pubblished values
+        commanded_vals = " ---- linear speed: " + str(speed) + "  ----- steering angle: " + str(steering_angle) + " ----"
+        print(commanded_vals)
 
         # Sleep to maintain the publishing rate
         rate.sleep()

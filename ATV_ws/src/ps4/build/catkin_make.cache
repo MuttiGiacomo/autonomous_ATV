@@ -1,0 +1,2 @@
+ps4-ros:remote_test
+-DCATKIN_DEVEL_PREFIX=/home/atv-remote/ps4/devel -DCMAKE_INSTALL_PREFIX=/home/atv-remote/ps4/install -G Unix Makefiles

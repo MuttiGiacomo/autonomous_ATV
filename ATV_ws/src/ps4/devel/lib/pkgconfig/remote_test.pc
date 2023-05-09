@@ -1,0 +1,8 @@
+prefix=/home/atv-remote/ps4/devel
+
+Name: remote_test
+Description: Description of remote_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/atv-remote/ps4/devel/lib 
+Requires: 

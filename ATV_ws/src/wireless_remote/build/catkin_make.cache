@@ -1,0 +1,2 @@
+joystick_drivers/joy:joystick_drivers/joystick_drivers:joystick_drivers/ps3joy:joystick_drivers/spacenav_node:joystick_drivers/wireless_remote_controller
+-DCATKIN_DEVEL_PREFIX=/home/atv-remote/wireless_remote/devel -DCMAKE_INSTALL_PREFIX=/home/atv-remote/wireless_remote/install -G Unix Makefiles
