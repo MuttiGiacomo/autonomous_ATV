@@ -46,7 +46,7 @@ def run_control(button_keys,analog_keys):
         #        LEFT = True
         #    if event.button == button_keys['right_arrow']:
         #        RIGHT = True
-        #    if event.button == button_keys['down_arrow']:
+        #    if event.button == button_keys['d\own_arrow']:
         #        VEL_DOWN = True
         #    if event.button == button_keys['up_arrow']:
         #        VEL_UP = True
