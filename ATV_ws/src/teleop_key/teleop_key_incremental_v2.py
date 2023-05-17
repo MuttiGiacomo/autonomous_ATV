@@ -1,9 +1,12 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python
 
 import rospy 
+import sys
+import tty
+import termios
 from std_msgs.msg import Bool,String,Int16
 from sensor_msgs.msg import Joy
-from wireless_remote_controller.msg import movement    # custom "movement" message:
+from action_control_unit.msg import movement    # custom "movement" message:
 															#uint16 speed_command
 															#int16 angle_of_correction
 															#string forward_reverse
@@ -28,6 +31,25 @@ ps4_buttons = {"share":0,
 "square": 0,
 "home": 0}
 
+
+def get_input_char():
+    # Get the file descriptor for stdin
+    fd = sys.stdin.fileno()
+
+    # Save the current terminal attributes
+    old_settings = termios.tcgetattr(fd)
+
+    try:
+        # Set the terminal to raw mode
+        tty.setraw(sys.stdin.fileno())
+
+        # Read a single character from stdin
+        ch = sys.stdin.read(1)
+    finally:
+        # Restore the old terminal attributes
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+
+    return ch
 
 def callback_joy(message):
 	for index,(button_name,value) in enumerate(ps4_buttons.items()):

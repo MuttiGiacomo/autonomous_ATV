@@ -1,14 +1,13 @@
-#!/usr/bin/env python3.6
+#!/usr/bin/env python
 
 import rospy 
-from std_msgs.msg import Bool,String,Int16
+from std_msgs.msg import Bool,String,Int16,Float32
 
 
 # REDO ---- controllare tickss
 atv_can_move = False 
 degree_per_tick = 1.8 #TO-DO search and complete 
 value_in_ticks = 0
-GPIO_relay_direction = 25
 
 lock_angle_callback = False 
 
@@ -18,7 +17,7 @@ def callback_angle_of_correction_in_degree(angle_degree):
 	if (not lock_angle_callback) and atv_can_move :
 		lock_angle_callback = True # to prevent the input of a new angle variation while the motor is already spinning ?????? not sure ??????
 		value_in_ticks = int(float(angle_degree.data) / degree_per_tick)  # find number of ticks for the stepper motor
-		cape_angle_tick.publish(value_in_ticks)
+		angle_cmd.publish(float(value_in_ticks*degree_per_tick)) # desired angle commanded 
 		value_in_ticks = 0
 		lock_angle_callback = False 
 	
@@ -48,7 +47,7 @@ if __name__=="__main__":
 		#init pubblishers
 
         # pubblisher of ticks for the stepper motor
-		cape_angle_tick = rospy.Publisher('cape_angle_tick',Int16,queue_size=1)
+		angle_cmd = rospy.Publisher('angle_cmd',Float32,queue_size=1)
 		# write logs for debugging
 		log = rospy.Publisher('log',String,queue_size=10)
 		

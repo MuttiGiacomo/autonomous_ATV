@@ -1,6 +1,6 @@
-Int16 Speed_command
-Int16 Angle_of_correction
-Bool Forward_reverse
+uint16 Speed_command
+int16 Angle_of_correction
+string Forward_reverse
 
 
 

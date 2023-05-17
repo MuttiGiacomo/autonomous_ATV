@@ -1,2 +1,2 @@
-ATV_control:emergency_stop:teleop_joy:teleop_key
--DCATKIN_DEVEL_PREFIX=/home/agtek/autonomous_ATV/ATV_ws/devel -DCMAKE_INSTALL_PREFIX=/home/agtek/autonomous_ATV/ATV_ws/install -G Unix Makefiles
+action_control_unit:emergency_stop:encoder/src/encoder:movements/src/api_move:movements/src/direction:movements/src/i2c_fifo:movements/src/screen/src/screen:movements/src/speed:ps4/src/ps4-ros:remote/src/remote:teleop_joy:teleop_key:wireless_remote/src/joystick_drivers/joy:wireless_remote/src/joystick_drivers/joystick_drivers:wireless_remote/src/joystick_drivers/ps3joy:wireless_remote/src/joystick_drivers/spacenav_node:wireless_remote/src/joystick_drivers/wireless_remote_controller
+-DCATKIN_DEVEL_PREFIX=/home/giacomo/autonomous_ATV/ATV_ws/devel -DCMAKE_INSTALL_PREFIX=/home/giacomo/autonomous_ATV/ATV_ws/install -G Unix Makefiles

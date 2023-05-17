@@ -49,7 +49,7 @@ find_package(catkin REQUIRED COMPONENTS
 # Generate messages in the 'msg' folder
 add_message_files(
   FILES
-  Movement.msg
+  movement.msg
 )
 
 ## Generate services in the 'srv' folder
@@ -104,7 +104,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES action_control_unit
-  CATKIN_DEPENDS rospy std_msgs message_runtime 
+  CATKIN_DEPENDS rospy std_msgs 
 #  DEPENDS system_lib
 )
 
