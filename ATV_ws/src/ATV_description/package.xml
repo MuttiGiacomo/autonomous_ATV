@@ -34,7 +34,7 @@
 
 </package>-->
 <package format="2">
-  <name>ATV_control</name>
+  <name>ATV_description</name>
   <version>0.0.0</version>
   <description>The vmc_project package</description>
   <!--  One maintainer tag required, multiple allowed, one person per tag  -->

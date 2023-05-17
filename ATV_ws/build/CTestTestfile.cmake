@@ -7,4 +7,6 @@
 subdirs("gtest")
 subdirs("teleop_key")
 subdirs("ATV_control")
+subdirs("ATV_description")
+subdirs("ATV_gazebo")
 subdirs("teleop_joy")

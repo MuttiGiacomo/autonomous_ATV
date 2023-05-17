@@ -133,6 +133,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/giacomo/autonomous_ATV/ATV_ws/build/gtest/cmake_install.cmake")
   include("/home/giacomo/autonomous_ATV/ATV_ws/build/teleop_key/cmake_install.cmake")
   include("/home/giacomo/autonomous_ATV/ATV_ws/build/ATV_control/cmake_install.cmake")
+  include("/home/giacomo/autonomous_ATV/ATV_ws/build/ATV_description/cmake_install.cmake")
+  include("/home/giacomo/autonomous_ATV/ATV_ws/build/ATV_gazebo/cmake_install.cmake")
   include("/home/giacomo/autonomous_ATV/ATV_ws/build/teleop_joy/cmake_install.cmake")
 
 endif()
