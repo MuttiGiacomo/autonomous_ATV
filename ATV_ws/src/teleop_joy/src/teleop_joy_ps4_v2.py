@@ -5,16 +5,18 @@ import sys
 import pygame
 import json, os
 from std_msgs.msg import Bool
-from ackermann_msgs.msg import AckermannDrive
 from action_control_unit.msg import movement
 
 # Set the maximum steering angle and speed
-MAX_STEERING_ANGLE = 0.4
-MAX_SPEED = 5.0
+MAX_SPEED = 50
+SPEED_CHANGE = 2
+ANGLE_CHANGE = 3
 
 # Initialize the steering angle and speed
 steering_angle = 0.0
 speed = 0.0
+stepper_is_disabled = True
+forward_reverse = "forward"
 
 ################################# LOAD UP A BASIC WINDOW #################################
 pygame.init()
@@ -26,13 +28,11 @@ color = 0
 
 
 
-
-
-
 # START OF GAME LOOP
 def run_control(button_keys,analog_keys):
-    global LEFT, RIGHT,VEL_CHANGE, steering_angle, speed, movement_msg
+    global LEFT, RIGHT,VEL_CHANGE, steering_angle, speed, movement_msg, stepper_is_disabled, forward_reverse
     LEFT, RIGHT, VEL_UP, VEL_DOWN = False,  False, False,  False
+
     ################################# CHECK PLAYER INPUT #################################
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -44,57 +44,33 @@ def run_control(button_keys,analog_keys):
         if event.type == pygame.JOYBUTTONDOWN:
             if event.button == button_keys['circle']:
                 speed = 0
+            if event.button == button_keys['square']:
+                stepper_is_disabled = True
+                disable_stepper.publish(True)
             if event.button == button_keys['triangle']:
-                movement_msg.Forward_reverse = "forward"
-            if event.button == button_keys['cross']:
-                movement_msg.Forward_reverse = "reverse"
-            if event.button == button_keys['cross']:
-                disable_stepper.publish(True)
-            if event.button == button_keys['left_stick_click']:
-                disable_stepper.publish(True)
-        #    if event.button == button_keys['left_arrow']:
-        #        LEFT = True
-        #    if event.button == button_keys['right_arrow']:
-        #        RIGHT = True
-        #    if event.button == button_keys['d\own_arrow']:
-        #        VEL_DOWN = True
-        #    if event.button == button_keys['up_arrow']:
-        #        VEL_UP = True
+                stepper_is_disabled = False
+                disable_stepper.publish(False)
+            if event.button == button_keys['x']:
+                forward_reverse = "reverse"
+                speed = 0
         ## HANDLES BUTTON RELEASES
-        #if event.type == pygame.JOYBUTTONUP:
-        #    if event.button == button_keys['left_arrow']:
-        #        LEFT = False
-        #    if event.button == button_keys['right_arrow']:
-        #        RIGHT = False
-        #    if event.button == button_keys['down_arrow']:
-        #        VEL_DOWN = False
-        #    if event.button == button_keys['up_arrow']:
-        #        VEL_UP = False
+        if event.type == pygame.JOYBUTTONUP:
+            if event.button == button_keys['x']:
+                forward_reverse = "forward"
+                speed = 0
         #HANDLES ANALOG INPUTS
         if event.type == pygame.JOYAXISMOTION:
             analog_keys[event.axis] = event.value
-            # print(analog_keys)
             # Horizontal - left Analog
-            if abs(analog_keys[0]) > .4:
-                if analog_keys[0] < -.7:
-                    LEFT = True
-                else:
-                    LEFT = False
-                if analog_keys[0] > .7:
-                    RIGHT = True
-                else:
-                    RIGHT = False
-            # Vertical Analog
-            #if abs(analog_keys[4]) > .4:
-            #    if analog_keys[4] < -.7:
-            #        VEL_UP = True
-            #    else:
-            #        VEL_UP = False
-            #    if analog_keys[4] > .7:
-            #        VEL_DOWN = True
-            #    else:
-            #        VEL_DOWN = False
-            #    # Triggers
+            if analog_keys[0] < -0.7:
+                LEFT = True
+            else:
+                LEFT = False
+            if analog_keys[0] > 0.7:
+                RIGHT = True
+            else:
+                RIGHT = False
+            # Triggers
             if analog_keys[2] > 0.4:  # Left trigger
                 VEL_DOWN = True
             else:
@@ -104,18 +80,20 @@ def run_control(button_keys,analog_keys):
             else:
                 VEL_UP = False
 
-    # Handle Player movement
-    if LEFT:
-        movement_msg.angle_of_correction = +3 # arbitrarily chosen 
-    if RIGHT:
-        movement_msg.angle_of_correction = -3 # arbitrarily chosen 
-    if VEL_UP:
-        speed += 0.5
-    if VEL_DOWN:
-        speed -= 0.5
+    ang_corr = 0
 
-    steering_angle = max(-MAX_STEERING_ANGLE, min(steering_angle, MAX_STEERING_ANGLE))
-    speed = max(-MAX_SPEED, min(speed, MAX_SPEED))
+    # Handle Player movement
+    if RIGHT:   ang_corr = - ANGLE_CHANGE  
+    if LEFT:    ang_corr = + ANGLE_CHANGE  
+    
+    if VEL_UP:   speed += SPEED_CHANGE
+    if VEL_DOWN: speed -= SPEED_CHANGE
+
+    # Limit the linear speed to their max and min values
+    if not(stepper_is_disabled):
+        movement_msg.Speed_command = max( 0 , min(speed, MAX_SPEED) )
+        movement_msg.Angle_of_correction = ang_corr
+        movement_msg.Forward_reverse = forward_reverse
 
     #pub.publish(movement_msg)
 
@@ -133,13 +111,13 @@ def main():
     use:    left stick for steering
             R2 to speed-up
             L2 to breake
+            hold "x" to reverse
     """
     global movement_msg, disable_stepper
     movement_msg = movement() 
     movement_msg.Forward_reverse = "forward"  
     movement_msg.Angle_of_correction = 0 
     movement_msg.Speed_command = 0
-    total_correction_angle = 0
 
 
     # Initialize the ROS node
@@ -147,7 +125,7 @@ def main():
 
     disable_stepper = rospy.Publisher('disable_stepper_motor_power',Bool,queue_size=1)
     # Create a publisher for the ackermann drive message
-    pub = rospy.Publisher("/command_move", AckermannDrive, queue_size=1)
+    pub = rospy.Publisher("/command_move", movement, queue_size=1)
     
 
     # Set the publishing rate to 10 Hz
@@ -173,8 +151,9 @@ def main():
         print(msg)
 
         run_control(button_keys,analog_keys)
-
-        pub.publish(movement_msg)
+        print("stepper:" + str(stepper_is_disabled))
+        if not(stepper_is_disabled):  pub.publish(movement_msg)
+        else: print("steper motor is disabled")
 
         # print pubblished values
         commanded_vals = " ---- linear speed: " + str(movement_msg.Speed_command) + "  ----- angle of correction: " + str(movement_msg.Angle_of_correction) + " ---- direction: " + str(movement_msg.Forward_reverse)

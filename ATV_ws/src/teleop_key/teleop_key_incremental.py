@@ -9,8 +9,9 @@ from std_msgs.msg import Float64, Bool
 from action_control_unit.msg import movement
 
 # Set the maximum steering angle and speed
-MAX_STEERING_ANGLE = 40
-MAX_SPEED = 500
+MAX_SPEED = 50
+ANGLE_CHANGE = 3
+SPEED_CHANGE = 2
 
 # Initialize the steering angle and speed
 steering_angle = 0
@@ -52,16 +53,15 @@ def keyboard_input():
 
     # Set the steering angle and speed based on the input
     if key == "a":
-        steering_angle = + 3
+        steering_angle = + ANGLE_CHANGE
     elif key == "d":
-        steering_angle = - 3
+        steering_angle = - ANGLE_CHANGE
     elif key == "w":
         steering_angle = 0
-        speed += 5  #speed must be always positive, if I want to go backwards the 'forward_reverse' variable is changed
+        speed += SPEED_CHANGE  #speed must be always positive, if I want to go backwards the 'forward_reverse' variable is changed
     elif key == "x": 
         steering_angle = 0
-        if speed > 1:
-            speed -= 5
+        speed -= SPEED_CHANGE
     elif key == "s":
         steering_angle = 0
         speed = 0
@@ -83,11 +83,8 @@ def keyboard_input():
     elif key == "l":
         sys.exit(0)
 
-    
-
-    # Limit the steering angle and speed to their maximum values
-    steering_angle = max(-MAX_STEERING_ANGLE, min(steering_angle, MAX_STEERING_ANGLE))
-    speed = min(speed, MAX_SPEED)
+    # Limit the linear speed to their max and min values
+    speed = max( 0 , min(speed, MAX_SPEED))
 
 def main():
     global steering_angle, speed, forward_reverse, dis_stepper
