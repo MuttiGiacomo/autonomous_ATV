@@ -39,37 +39,33 @@ def m_angle_to_a_angle(m_angle):
     return a_angle
 
 def m_speed_to_a_speed(m_speed,direction):
-    if direction == "forward":
-        coef = + 1/10
-    elif direction == "reverse":
-        coef = - 1/10
+    if direction == 'forward':
+        coef = 0.1
+    elif direction == 'reverse':
+        coef = - 0.1
     else:
-        print("not defined direction, currently set to: " + direction)
-        coef = 0 
-
+        print("DEBUG: not defined direction, currently set to: " + direction)
+        coef = 0
+    
     a_speed = m_speed * coef
-
+    print("a_speed: " + str(a_speed))
     return a_speed
 
 def convert_to_ackerman_callback(movement_msg):
     #global a_msg, stop_a_msg
     
     a_msg.steering_angle ,  a_msg.steering_angle_velocity , a_msg.speed , a_msg.acceleration , a_msg.jerk = [ m_angle_to_a_angle(movement_msg.Angle_of_correction) , 0 , m_speed_to_a_speed(movement_msg.Speed_command, movement_msg.Forward_reverse) , 0 , 0]
-    print("steering angle: " + str(a_msg.steering_angle*180/pi))
-    print("speed " + str(a_msg.speed))
     update_ackermann_msg(a_msg)
 
 def update_ackermann_msg(a_msg):
-    print("debug: called update" )
+    print("DEBUG: called update" )
     rate =rospy.Rate(10) #Hz
     forward_reverse_last_value = "undefined"
     #while not rospy.is_shutdown(): #run the next set of steps as long as the system is active
     if (status == "go" and mode == "auto"): #if the ATV is ready to move (status="go") and is in automatic mode (mode="auto")
-        print("debug: yesss" )
         atv_can_move.publish(True)
         command_pub.publish(a_msg)
     else : # if the ATV is ment to be driven manually (mode="manual") or it is not ready to move (status="stop")
-        print("debug: nooo" )
         atv_can_move.publish(False)
         command_pub.publish(stop_a_msg)
         print("ATV can't move, check 'status' and/or 'mode' values")
