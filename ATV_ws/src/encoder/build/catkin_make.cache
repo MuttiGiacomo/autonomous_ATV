@@ -1,2 +1,0 @@
-encoder
--DCATKIN_DEVEL_PREFIX=/home/atv-remote/encoder/devel -DCMAKE_INSTALL_PREFIX=/home/atv-remote/encoder/install -G Unix Makefiles

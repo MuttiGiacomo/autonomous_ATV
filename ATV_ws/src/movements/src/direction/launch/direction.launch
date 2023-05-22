@@ -1,4 +1,0 @@
-<launch>
-  <node name="stepper" pkg="direction" type="stepper.py" respawn="true" output="screen"/>
-  <node name="direction" pkg="direction" type="direction.py" respawn="true" output="screen"/>
-</launch>

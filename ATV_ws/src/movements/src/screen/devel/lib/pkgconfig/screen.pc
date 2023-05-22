@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/screen/devel
-
-Name: screen
-Description: Description of screen
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/atv-remote/screen/devel/lib 
-Requires: 

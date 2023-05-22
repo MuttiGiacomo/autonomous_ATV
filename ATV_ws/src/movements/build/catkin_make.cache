@@ -1,2 +1,0 @@
-api_move:direction:i2c_fifo:screen/src/screen:speed
--DCATKIN_DEVEL_PREFIX=/home/atv-remote/movements/devel -DCMAKE_INSTALL_PREFIX=/home/atv-remote/movements/install -G Unix Makefiles

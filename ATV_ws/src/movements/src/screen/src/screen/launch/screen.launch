@@ -1,3 +1,0 @@
-<launch>
-  <node name="screen" pkg="screen" type="screen.py" respawn="true" output="screen"/>
-</launch>

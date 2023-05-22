@@ -1,3 +1,0 @@
-<launch>
-  <node name="i2c_fifo" pkg="i2c_fifo" type="i2c_fifo.py" respawn="true" output="screen"/>
-</launch>

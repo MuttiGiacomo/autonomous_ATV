@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/encoder/install
-
-Name: encoder
-Description: Description of encoder
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/atv-remote/encoder/install/lib 
-Requires: 

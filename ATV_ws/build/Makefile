@@ -294,7 +294,7 @@ _catkin_empty_exported_target: cmake_check_build_system
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	$(MAKE) -f encoder/src/encoder/CMakeFiles/_catkin_empty_exported_target.dir/build.make encoder/src/encoder/CMakeFiles/_catkin_empty_exported_target.dir/build
+	$(MAKE) -f wireless_remote/src/joystick_drivers/joystick_drivers/CMakeFiles/_catkin_empty_exported_target.dir/build.make wireless_remote/src/joystick_drivers/joystick_drivers/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
@@ -517,162 +517,6 @@ action_control_unit_gennodejs: cmake_check_build_system
 action_control_unit_gennodejs/fast:
 	$(MAKE) -f action_control_unit/CMakeFiles/action_control_unit_gennodejs.dir/build.make action_control_unit/CMakeFiles/action_control_unit_gennodejs.dir/build
 .PHONY : action_control_unit_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named api_move_geneus
-
-# Build rule for target.
-api_move_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_geneus
-.PHONY : api_move_geneus
-
-# fast build rule for target.
-api_move_geneus/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_geneus.dir/build.make movements/src/api_move/CMakeFiles/api_move_geneus.dir/build
-.PHONY : api_move_geneus/fast
-
-#=============================================================================
-# Target rules for targets named api_move_genpy
-
-# Build rule for target.
-api_move_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_genpy
-.PHONY : api_move_genpy
-
-# fast build rule for target.
-api_move_genpy/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_genpy.dir/build.make movements/src/api_move/CMakeFiles/api_move_genpy.dir/build
-.PHONY : api_move_genpy/fast
-
-#=============================================================================
-# Target rules for targets named api_move_gencpp
-
-# Build rule for target.
-api_move_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_gencpp
-.PHONY : api_move_gencpp
-
-# fast build rule for target.
-api_move_gencpp/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_gencpp.dir/build.make movements/src/api_move/CMakeFiles/api_move_gencpp.dir/build
-.PHONY : api_move_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named api_move_gennodejs
-
-# Build rule for target.
-api_move_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_gennodejs
-.PHONY : api_move_gennodejs
-
-# fast build rule for target.
-api_move_gennodejs/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_gennodejs.dir/build.make movements/src/api_move/CMakeFiles/api_move_gennodejs.dir/build
-.PHONY : api_move_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named api_move_genlisp
-
-# Build rule for target.
-api_move_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_genlisp
-.PHONY : api_move_genlisp
-
-# fast build rule for target.
-api_move_genlisp/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_genlisp.dir/build.make movements/src/api_move/CMakeFiles/api_move_genlisp.dir/build
-.PHONY : api_move_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named api_move_generate_messages
-
-# Build rule for target.
-api_move_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_generate_messages
-.PHONY : api_move_generate_messages
-
-# fast build rule for target.
-api_move_generate_messages/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_generate_messages.dir/build.make movements/src/api_move/CMakeFiles/api_move_generate_messages.dir/build
-.PHONY : api_move_generate_messages/fast
-
-#=============================================================================
-# Target rules for targets named api_move_generate_messages_lisp
-
-# Build rule for target.
-api_move_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_generate_messages_lisp
-.PHONY : api_move_generate_messages_lisp
-
-# fast build rule for target.
-api_move_generate_messages_lisp/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_generate_messages_lisp.dir/build.make movements/src/api_move/CMakeFiles/api_move_generate_messages_lisp.dir/build
-.PHONY : api_move_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named api_move_generate_messages_eus
-
-# Build rule for target.
-api_move_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_generate_messages_eus
-.PHONY : api_move_generate_messages_eus
-
-# fast build rule for target.
-api_move_generate_messages_eus/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_generate_messages_eus.dir/build.make movements/src/api_move/CMakeFiles/api_move_generate_messages_eus.dir/build
-.PHONY : api_move_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named api_move_generate_messages_cpp
-
-# Build rule for target.
-api_move_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_generate_messages_cpp
-.PHONY : api_move_generate_messages_cpp
-
-# fast build rule for target.
-api_move_generate_messages_cpp/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_generate_messages_cpp.dir/build.make movements/src/api_move/CMakeFiles/api_move_generate_messages_cpp.dir/build
-.PHONY : api_move_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named api_move_generate_messages_nodejs
-
-# Build rule for target.
-api_move_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_generate_messages_nodejs
-.PHONY : api_move_generate_messages_nodejs
-
-# fast build rule for target.
-api_move_generate_messages_nodejs/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_generate_messages_nodejs.dir/build.make movements/src/api_move/CMakeFiles/api_move_generate_messages_nodejs.dir/build
-.PHONY : api_move_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named api_move_generate_messages_py
-
-# Build rule for target.
-api_move_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 api_move_generate_messages_py
-.PHONY : api_move_generate_messages_py
-
-# fast build rule for target.
-api_move_generate_messages_py/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/api_move_generate_messages_py.dir/build.make movements/src/api_move/CMakeFiles/api_move_generate_messages_py.dir/build
-.PHONY : api_move_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named _api_move_generate_messages_check_deps_movement
-
-# Build rule for target.
-_api_move_generate_messages_check_deps_movement: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _api_move_generate_messages_check_deps_movement
-.PHONY : _api_move_generate_messages_check_deps_movement
-
-# fast build rule for target.
-_api_move_generate_messages_check_deps_movement/fast:
-	$(MAKE) -f movements/src/api_move/CMakeFiles/_api_move_generate_messages_check_deps_movement.dir/build.make movements/src/api_move/CMakeFiles/_api_move_generate_messages_check_deps_movement.dir/build
-.PHONY : _api_move_generate_messages_check_deps_movement/fast
 
 #=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_py
@@ -1026,19 +870,6 @@ sixpair/fast:
 .PHONY : sixpair/fast
 
 #=============================================================================
-# Target rules for targets named ps4_ros
-
-# Build rule for target.
-ps4_ros: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ps4_ros
-.PHONY : ps4_ros
-
-# fast build rule for target.
-ps4_ros/fast:
-	$(MAKE) -f ps4/src/ps4-ros/CMakeFiles/ps4_ros.dir/build.make ps4/src/ps4-ros/CMakeFiles/ps4_ros.dir/build
-.PHONY : ps4_ros/fast
-
-#=============================================================================
 # Target rules for targets named spacenav_node
 
 # Build rule for target.
@@ -1247,18 +1078,6 @@ help:
 	@echo "... action_control_unit_generate_messages_eus"
 	@echo "... action_control_unit_genlisp"
 	@echo "... action_control_unit_gennodejs"
-	@echo "... api_move_geneus"
-	@echo "... api_move_genpy"
-	@echo "... api_move_gencpp"
-	@echo "... api_move_gennodejs"
-	@echo "... api_move_genlisp"
-	@echo "... api_move_generate_messages"
-	@echo "... api_move_generate_messages_lisp"
-	@echo "... api_move_generate_messages_eus"
-	@echo "... api_move_generate_messages_cpp"
-	@echo "... api_move_generate_messages_nodejs"
-	@echo "... api_move_generate_messages_py"
-	@echo "... _api_move_generate_messages_check_deps_movement"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
@@ -1286,7 +1105,6 @@ help:
 	@echo "... diagnostic_msgs_generate_messages_eus"
 	@echo "... diagnostic_msgs_generate_messages_nodejs"
 	@echo "... sixpair"
-	@echo "... ps4_ros"
 	@echo "... spacenav_node"
 	@echo "... wireless_remote_controller_geneus"
 	@echo "... wireless_remote_controller_generate_messages"

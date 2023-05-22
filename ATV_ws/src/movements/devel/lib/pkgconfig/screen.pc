@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/movements/devel
-
-Name: screen
-Description: Description of screen
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/atv-remote/movements/devel/lib 
-Requires: 

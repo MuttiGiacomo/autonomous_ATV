@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD='/home/agtek/autonomous_ATV/ATV_ws/build'
-export PYTHONPATH="/home/agtek/autonomous_ATV/ATV_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"

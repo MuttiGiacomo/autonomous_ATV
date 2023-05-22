@@ -1,4 +1,0 @@
-<launch>
-  <node name="speed_control" pkg="speed" type="speed_control.py" respawn="true" output="screen"/>
-  <node name="brake" pkg="speed" type="brake.py" respawn="true" output="screen"/>
-</launch>

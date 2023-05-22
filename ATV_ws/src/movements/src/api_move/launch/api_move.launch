@@ -1,3 +1,0 @@
-<launch>
-  <node name="api_move" pkg="api_move" type="api_move_node.py" respawn="true" output="screen"/>
-</launch>

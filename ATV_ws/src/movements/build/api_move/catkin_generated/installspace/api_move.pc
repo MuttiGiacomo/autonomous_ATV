@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/movements/install
-
-Name: api_move
-Description: Description of api_move
-Version: 0.0.0
-Cflags: -I/home/atv-remote/movements/install/include
-Libs: -L/home/atv-remote/movements/install/lib 
-Requires: message_runtime

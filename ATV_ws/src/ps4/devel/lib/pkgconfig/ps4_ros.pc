@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/ps4/devel
-
-Name: ps4_ros
-Description: Description of ps4_ros
-Version: 0.0.1
-Cflags: 
-Libs: -L/home/atv-remote/ps4/devel/lib 
-Requires: 
