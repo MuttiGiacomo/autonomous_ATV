@@ -148,3 +148,7 @@ Set of commands to launch everything:
 
 
 
+git branch -m main atv_playground
+git fetch origin
+git branch -u origin/atv_playground atv_playground
+git remote set-head origin -a
