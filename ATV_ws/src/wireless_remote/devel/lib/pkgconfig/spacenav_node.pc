@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/wireless_remote/devel
-
-Name: spacenav_node
-Description: Description of spacenav_node
-Version: 1.13.0
-Cflags: 
-Libs: -L/home/atv-remote/wireless_remote/devel/lib 
-Requires: roscpp geometry_msgs sensor_msgs

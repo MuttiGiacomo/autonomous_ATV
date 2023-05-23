@@ -8,7 +8,8 @@ catkin_package()
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-   teleop_key.py
+   nodes/teleop_key.py
+   nodes/teleop_key_sim_only.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

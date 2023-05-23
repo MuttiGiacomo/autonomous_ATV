@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/wireless_remote/install
-
-Name: joy
-Description: Description of joy
-Version: 1.13.0
-Cflags: 
-Libs: -L/home/atv-remote/wireless_remote/install/lib 
-Requires: roscpp diagnostic_updater sensor_msgs

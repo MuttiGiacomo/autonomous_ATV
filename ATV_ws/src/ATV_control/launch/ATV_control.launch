@@ -13,7 +13,7 @@
   <node name="custom_to_ackermann" pkg="action_control_unit" type="custom_to_ackermann.py"> </node>
 
   <!-- run node to compute seering angles and spin velocities of the wheels (reads from /ackermann_cmd, pubblishes on the 4 /command topics, one for each actuator)-->
-  <node name="ackermann_steering" pkg="action_control_unit" type="ackermann_steering.py"> </node>
+  <node name="ackermann_steering" pkg="ATV_control" type="ackermann_steering.py"> </node>
 
   
 </launch>

@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/wireless_remote/install
-
-Name: ps3joy
-Description: Description of ps3joy
-Version: 1.13.0
-Cflags: 
-Libs: -L/home/atv-remote/wireless_remote/install/lib 
-Requires: diagnostic_msgs sensor_msgs rospy rosgraph

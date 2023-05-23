@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <node name="teleop_key_sim_only" pkg="teleop_key" type="teleop_key_sim_only.py" output="screen"/>
+</launch>

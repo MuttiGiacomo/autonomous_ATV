@@ -1,2 +1,0 @@
-ATV_control:ATV_description:ATV_gazebo:action_control_unit:teleop_joy:teleop_key:wireless_remote/src/joystick_drivers/joy:wireless_remote/src/joystick_drivers/joystick_drivers:wireless_remote/src/joystick_drivers/ps3joy:wireless_remote/src/joystick_drivers/spacenav_node:wireless_remote/src/joystick_drivers/wireless_remote_controller
--DCATKIN_DEVEL_PREFIX=/home/agtek/autonomous_ATV/ATV_ws/devel -DCMAKE_INSTALL_PREFIX=/home/agtek/autonomous_ATV/ATV_ws/install -G Unix Makefiles

@@ -1,8 +1,0 @@
-prefix=/home/atv-remote/wireless_remote/devel
-
-Name: wireless_remote_controller
-Description: Description of wireless_remote_controller
-Version: 0.0.0
-Cflags: -I/home/atv-remote/wireless_remote/devel/include
-Libs: -L/home/atv-remote/wireless_remote/devel/lib 
-Requires: message_runtime
