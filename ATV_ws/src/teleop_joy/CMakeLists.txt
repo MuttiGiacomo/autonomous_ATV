@@ -8,6 +8,6 @@ catkin_package()
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-   src/teleop_joy_ps4.py
+   nodes/teleop_joy.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

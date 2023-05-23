@@ -1,14 +1,11 @@
 <?xml version="1.0"?>
 <package>
   <name>teleop_joy</name>
-  <version>0.1.3</version>
-  <description>Generic joystick teleop for twist robots.</description>
-  <maintainer email="mpurvis@clearpathrobotics.com">Mike Purvis</maintainer>
+  <version>0.0.0</version>
+  <description> Package for the teleopration using a ps4 controller </description>
+  <license>TODO</license>
 
-  <license>BSD</license>
-
-  <url type="website">http://wiki.ros.org/teleop_twist_joy</url>
-  <author email="mpurvis@clearpathrobotics.com">Mike Purvis</author>
+  <maintainer email="giacomo.mutti@outlook.com">Mutti Giacomo</maintainer>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>geometry_msgs</build_depend>
@@ -23,6 +20,4 @@
   <run_depend>roscpp</run_depend>
   <run_depend>sensor_msgs</run_depend>
 
-  <export>
-  </export>
 </package>

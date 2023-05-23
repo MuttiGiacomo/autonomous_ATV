@@ -14,18 +14,13 @@ MAX_SPEED = 5.0
 steering_angle = 0.0
 speed = 0.0
 
-################################# LOAD UP A BASIC WINDOW #################################
+# Define the paths to json file
+yaml_file_path = os.path.join(os.path.dirname(__file__), "../config/ps4_keys.json")
+
+
 pygame.init()
 
 clock = pygame.time.Clock()
-color = 0
-###########################################################################################
-
-
-
-
-
-
 
 # START OF GAME LOOP
 def run_control(button_keys,analog_keys):
@@ -84,11 +79,6 @@ def run_control(button_keys,analog_keys):
                     VEL_DOWN = True
                 else:
                     VEL_DOWN = False
-                # Triggers
-            #if analog_keys[3] > 0:  # Left trigger
-            #    VEL_UP += True
-            #if analog_keys[5] > 0:  # Right Trigger
-            #    VEL_DOWN -= True
 
     # Handle Player movement
     if LEFT:
@@ -135,7 +125,7 @@ def main():
     for joystick in joysticks:
         joystick.init()
 
-    with open("src/teleop_joy/src/ps4_keys.json") as file:
+    with open(yaml_file_path) as file:
         button_keys = json.load(file)
 
     # 0: Left analog horizonal, 1: Left Analog Vertical, 2: Right Analog Horizontal

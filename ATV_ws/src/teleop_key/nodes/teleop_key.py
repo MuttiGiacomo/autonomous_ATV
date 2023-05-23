@@ -35,14 +35,9 @@ def get_input_char():
 
     return ch
 
-def signal_handler(sig, frame):
-    print('You pressed Ctrl+C!')
-    sys.exit(0)
 
 def keyboard_input():
-    global steering_angle, speed, brake_activated
-    brake_activated = True
-
+    global speed, steering_angle
     # Read input from the keyboard
     key = get_input_char()
 
@@ -57,20 +52,15 @@ def keyboard_input():
         speed -= 0.5
     elif key == "s":
         speed = 0
-    elif key == "p":
-        if brake_activated:
-            brake_activated = False
-        else:
-            brake_activated = True
 
     elif key == "l":
         sys.exit(0)
 
-    
-
     # Limit the steering angle and speed to their maximum values
     steering_angle = max(-MAX_STEERING_ANGLE, min(steering_angle, MAX_STEERING_ANGLE))
     speed = max(-MAX_SPEED, min(speed, MAX_SPEED))
+
+    return(speed, steering_angle)
 
 def main():
     global steering_angle, speed
@@ -85,9 +75,7 @@ def main():
 
     w/x : increase/decrease linear velocity
     a/d : increase/decrease angular velocity
-    p : park (activate hand brake)
-    space key, s : force stop
-    CTRL-C to quit
+    s : force stop
 
     press "l" to exit
     """
@@ -97,7 +85,6 @@ def main():
 
     # Create a publisher for the ackermann drive message
     pub = rospy.Publisher("/ackermann_cmd", AckermannDrive, queue_size=1)
-    brake_bool_pub = rospy.Publisher("/active_hand_brake", Bool, queue_size=1)
 
     # Set the publishing rate to 10 Hz
     rate = rospy.Rate(10)
@@ -107,26 +94,20 @@ def main():
         # Read input from the keyboard
 
         print(msg)
-
-        signal.signal(signal.SIGINT, signal_handler)
-
-        keyboard_input()
-
-        
-
         # Create an ackermann drive message with the current steering angle and speed
         drive_msg = AckermannDrive()
-        drive_msg.steering_angle = steering_angle
-        drive_msg.speed = speed
+        drive_msg.speed , drive_msg.steering_angle = keyboard_input()
+        
 
         # Publish the ackermann drive message
         pub.publish(drive_msg)
-        commanded_vals = " ---- linear speed: " + str(speed) + "  ----- steering angle: " + str(steering_angle) + " ----"
+        print("---------------------------------------------------------------------------------------------")
+        commanded_vals = " ---- linear speed: " + str(drive_msg.speed) + "  ----- steering angle: " + str(drive_msg.steering_angle) + " rad"
         print(commanded_vals)
+        print("---------------------------------------------------------------------------------------------")
 
         # Sleep to maintain the publishing rate
         rate.sleep()
-        signal.signal(signal.SIGINT, signal_handler)
 
 if __name__ == "__main__":
     try:

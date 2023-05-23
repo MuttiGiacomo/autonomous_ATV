@@ -1,2 +1,4 @@
 ATV_ws/build
 ATV_ws/devel
+.vscode
+ATV_ws/.vscode
