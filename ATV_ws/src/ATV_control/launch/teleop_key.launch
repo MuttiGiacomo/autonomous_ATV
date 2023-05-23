@@ -1,8 +1,0 @@
-<launch>
-
-  <!-- run node for the keyboard teleoprations (pubblishes on /ackermann_cmd) -->
-  <node name="teleop_key" pkg="teleop_key" type="teleop_key.py"
-    output="screen"> 
-  </node>
-
-</launch>
