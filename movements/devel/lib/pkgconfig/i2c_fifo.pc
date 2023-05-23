@@ -1,0 +1,8 @@
+prefix=/home/atv-remote/movements/devel
+
+Name: i2c_fifo
+Description: Description of i2c_fifo
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/atv-remote/movements/devel/lib 
+Requires: 

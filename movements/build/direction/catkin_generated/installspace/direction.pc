@@ -1,0 +1,8 @@
+prefix=/home/atv-remote/movements/install
+
+Name: direction
+Description: Description of direction
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/atv-remote/movements/install/lib 
+Requires: 

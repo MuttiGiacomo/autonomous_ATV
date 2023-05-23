@@ -1,0 +1,8 @@
+prefix=/home/atv-remote/ps4/install
+
+Name: ps4_ros
+Description: Description of ps4_ros
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/atv-remote/ps4/install/lib 
+Requires: 

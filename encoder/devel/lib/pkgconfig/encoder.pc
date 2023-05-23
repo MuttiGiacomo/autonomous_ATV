@@ -1,0 +1,8 @@
+prefix=/home/atv-remote/encoder/devel
+
+Name: encoder
+Description: Description of encoder
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/atv-remote/encoder/devel/lib 
+Requires: 

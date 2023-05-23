@@ -1,0 +1,8 @@
+prefix=/home/atv-remote/remote/install
+
+Name: remote
+Description: Description of remote
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/atv-remote/remote/install/lib 
+Requires: 

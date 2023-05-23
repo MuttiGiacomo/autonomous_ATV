@@ -1,0 +1,2 @@
+emergency_stop
+-DCATKIN_DEVEL_PREFIX=/home/atv-remote/emergency_stop/devel -DCMAKE_INSTALL_PREFIX=/home/atv-remote/emergency_stop/install -G Unix Makefiles
