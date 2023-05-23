@@ -6,7 +6,8 @@
 <!-- load empy world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
 <!-- spawn ATV-->
-    <param name="robot_description" command="cat '$(find ATV_description)/models/polaris_ranger_xp900_no_roll_cage/model.urdf'" />
+    <param name="robot_description" command="cat '$(find ATV_description)/models/polaris_ranger_xp900_no_roll_cage/model2.urdf'" />
+    
     <node name="ATV_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
           args="-urdf -param robot_description -model ATV" />
         
