@@ -10,6 +10,7 @@ project(ATV_description)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
+  gazebo_ros
 )
 
 ## System dependencies are found with CMake's conventions
