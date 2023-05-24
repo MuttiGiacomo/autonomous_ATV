@@ -1,2 +1,0 @@
-ATV_control:ATV_description:ATV_gazebo:teleop_joy:teleop_key
--DCATKIN_DEVEL_PREFIX=/home/giacomo/autonomous_ATV/ATV_ws/devel -DCMAKE_INSTALL_PREFIX=/home/giacomo/autonomous_ATV/ATV_ws/install -G Unix Makefiles
