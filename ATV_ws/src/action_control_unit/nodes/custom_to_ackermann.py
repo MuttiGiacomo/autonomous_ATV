@@ -38,6 +38,7 @@ def m_angle_to_a_angle(m_angle):
     prev_angle = a_angle 
     return a_angle
 
+#transforms an unsigned velocity value into the actual velocity that will be positive or negative depending on the desired direction of movement
 def m_speed_to_a_speed(m_speed,direction):
     if direction == 'forward':
         coef = 0.1
