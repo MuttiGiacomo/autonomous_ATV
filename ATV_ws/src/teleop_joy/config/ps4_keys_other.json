@@ -1,0 +1,22 @@
+{
+    "square": 3,
+    "x": 0,
+    "circle": 1,
+    "triangle": 2,
+    "L1": 4,
+    "R1": 5,
+    "L2": 6,
+    "R2": 7,
+    "share": 8,
+    "option": 9,
+    "R3": 12,
+    "L3": 11,
+    "PS": 10,
+
+    
+    "left_arrow": 13,
+    "right_arrow": 14,
+    "up_arrow": 15,
+    "down_arrow": 16
+  
+    }
