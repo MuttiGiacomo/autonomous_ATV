@@ -1,30 +1,29 @@
 # autonomous_ATV
-Development of autonomous driving capabilities for an ATV, in collaboration with the department of Agricultural Science of the Helsinki University
+Development of autonomous driving capabilities for an ATV, in collaboration with the Department of Agricultural Science of the Helsinki University.
 
 ## atv_playground
-This branch is ment to be an easier introduction to the proper "atv_simulation". 
-Here the inputs and control may look easier and additional sensors are already prepared (3D camera, 2D lidar, IMU and GPS).
-The main difference from the simulation enviroment are the inputs: 
-- desired velocity (that can be also negative)
-- the desired global steering angle (not the single variation between timeframs)
-Which, compared to the simulation (which rewuires unisgned velocity, direction and angle adjustament), make the approach and the development of autonomous driving scripts easier.
-
+This branch is meant to be an easier introduction to the proper "atv_simulation". 
+Here the inputs and control may look easier, and additional sensors are already prepared (3D camera, 2D lidar, IMU, and GPS).
+The main difference from the simulation environment are the inputs: 
+- Desired velocity (which can also be negative)
+- The desired global steering angle (not the single variation between timeframes)
+These differences, compared to the simulation (which requires unsigned velocity, direction, and angle adjustment), make the approach and the development of autonomous driving scripts easier.
 
 ROS version: Melodic 
 
 dev_ws: "ATV_ws"
 
-current packages:
+Current packages:
 - ATV_description -> for ATV model and world visualization
 - ATV_control -> for actuator implementation
-- ATV_gazebo -> for launching everything in a specific complex world 
+- atv_gazebo -> for launching everything in a specific complex world 
 - teleop_key -> command ATV from keyboard input
 - teleop_joy -> command ATV from joystick input
 
 --------------
 
 ### Launch command
-  ```sh
+```sh
 cd autonomous_ATV/ATV_ws
 catkin_make
 source devel/setup.bash
