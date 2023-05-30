@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <node name="teleop_joy_sim_only" pkg="teleop_joy" type="teleop_other_joy_sim_only.py" output="screen"/>
+</launch>

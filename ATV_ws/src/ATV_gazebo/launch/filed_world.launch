@@ -23,7 +23,6 @@
   </include>
 
   <param name="robot_description" command="cat '$(find ATV_description)/models/polaris_ranger_xp900_no_roll_cage/model.urdf'"/>
-  <!--<param name="robot_description" command="cat '$(find ATV_description)/models/polaris_ranger_xp900_no_roll_cage/model2.urdf'"/> use this line to have all theother sensors in the simulation (IMU, GPS, 2D lidar, 3D camera)  -->
   <node name="ATV_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" respawn="false"
    args="-x -6.0 -y 0 -z 1.13 -Y 0   -urdf -param robot_description -model ATV">
   </node> 

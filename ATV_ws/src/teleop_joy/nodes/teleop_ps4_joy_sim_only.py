@@ -9,6 +9,11 @@ from std_msgs.msg import Bool
 from action_control_unit.msg import movement
 
 # ----->  this file is for SIMULATION ONLY   <------
+# buttons where mapped for a PS4 controller connected using ds4drv
+# note: there are 2 ways to connect the ps4 controller (using the gui and using "sudo ds4drv": 
+# using the first one the button mapping is the same as the third party controller, 
+# using ds4drv the mapping is different, therefore 2 more scripts where written. 
+# This is one of them.
 
 # emergency stop and stepper motor status info are controlled wuth the ps4 controller
 # in the real atv these informations are given by the hardware
@@ -23,13 +28,13 @@ SPEED_CHANGE = 2
 ANGLE_CHANGE = 3
 
 # Initialize speed, default stepper motor status, default direction
-speed = 0.0
+speed = 0
 stepper_is_disabled = True
 forward_reverse = "forward"
 emergency_stop = False
 
 # Define the paths to json file
-yaml_file_path = os.path.join(os.path.dirname(__file__), "../config/ps4_keys.json")
+yaml_file_path = os.path.join(os.path.dirname(__file__), "../config/ps4_ctrl_keys.json")
 
 # Initialize Pygame
 pygame.init()
@@ -54,28 +59,44 @@ def run_control(button_keys, analog_keys):
             if event.button == button_keys['x']:
                 forward_reverse = "reverse"
                 speed = 0
+            if event.button == button_keys['PS']:
+                speed = 0
+                stepper_is_disabled = True
+                emergency_stop = True
+            if event.button == button_keys['option']:
+                emergency_stop = False
+            if event.button == button_keys['R1']:
+                VEL_UP = True
+            if event.button == button_keys['L1']:
+                VEL_DOWN = True
         # button button release
         if event.type == pygame.JOYBUTTONUP:
             if event.button == button_keys['x']:
                 forward_reverse = "forward"
                 speed = 0
                 emergency_pub.publish(True)
+            if event.button == button_keys['R1']:
+                VEL_UP = False
+            if event.button == button_keys['L1']:
+                VEL_DOWN = False
         # triggers and sticks
         if event.type == pygame.JOYAXISMOTION:
             analog_keys[event.axis] = event.value
-            if analog_keys[0] < -0.7: #left stick
+            if analog_keys[0] < -0.5: #left stick
                 LEFT = True
             else:
                 LEFT = False
-            if analog_keys[0] > 0.7: #left stick
+            if analog_keys[0] > 0.5: #left stick
                 RIGHT = True
             else:
                 RIGHT = False
-            if analog_keys[3] > 0.4: #left trigger
+            #if analog_keys[2] > 0.4: #left trigger  on 3rd party controller
+            if analog_keys[3] > 0.4: #left trigger  on ps4 controller
                 VEL_DOWN = True
             else:
                 VEL_DOWN = False
-            if analog_keys[4] > 0.4: #right trigger
+            #if analog_keys[5] > 0.4: #right trigger  on 3rd party controller
+            if analog_keys[4] > 0.4: #right trigger  on ps4 controller
                 VEL_UP = True
             else:
                 VEL_UP = False
@@ -114,11 +135,12 @@ def main():
     # init pubblishers
     command_pub = rospy.Publisher("/command_move", movement, queue_size=1)
     disabled_stepper_pub = rospy.Publisher('disable_stepper_motor_power', Bool, queue_size=1)
+    emergency_pub = rospy.Publisher('Emergency_stop', Bool, queue_size=1)
 
     rate = rospy.Rate(10)
 
     #connect to PS4 controller
-    controller = pygame.joystick.Joystick(4)    # in the office PC, using "sudo ds4drv", the ps4 controller is /dev/input/js4, this might change depending on the machine
+    controller = pygame.joystick.Joystick(0)    # in the office PC, using "sudo ds4drv", the ps4 controller is /dev/input/js4, this might change depending on the machine
                                                 # to check wich device use "ls -la /dev/input" before and after connecting your ps4 controller 
                                                 # (if you are using "sudo ds4drv" it will tell you which device has been created, aka the jsN value)
     controller.init()
@@ -126,6 +148,7 @@ def main():
     with open(yaml_file_path) as file:
         button_keys = json.load(file)
 
+    #analog_keys = {0: 0, 1: 0, 2: 0, 3: 0, 4: -1, 5: -1} 2 5
     analog_keys = {0: 0, 1: 0, 2: 0, 3: 0, 4: -1, 5: -1}
 
     while not rospy.is_shutdown():

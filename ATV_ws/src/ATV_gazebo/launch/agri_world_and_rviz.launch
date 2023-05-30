@@ -42,16 +42,18 @@
 
     <node name="ATV_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
           args="-urdf -param robot_description -model ATV" />
-    
         
     <!-- Starting Joint state publisher node which will publish the joint values -->
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     
 	<!-- Starting robot state publish which will publish tf -->
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-  
 
 <!-- launch control: load controllers, activate cmd_vel_to_ackermann_drive node and ackermann_steering node-->
     <include file="$(find ATV_control)/launch/ATV_control.launch"/>
+
+	<!-- Launch visualization in rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ATV_description)/config/sim.rviz" required="true" />
+	<!--<node name="rviz" pkg="rviz" type="rviz" />-->
     
 </launch>
