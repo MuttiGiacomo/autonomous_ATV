@@ -6,6 +6,11 @@ import pygame
 import json, os
 from ackermann_msgs.msg import AckermannDrive
 
+
+# buttons where mapped for a third party PS4 controller (GIOTECK PS4/PC Controller)
+# they also work if you are using a ps4 controller connected using the normal ubuntu gui fo bt connections
+
+
 # Set the maximum steering angle and speed
 MAX_STEERING_ANGLE = 0.4
 MAX_SPEED = 5.0
@@ -15,7 +20,7 @@ steering_angle = 0.0
 speed = 0.0
 
 # Define the paths to json file
-yaml_file_path = os.path.join(os.path.dirname(__file__), "../config/ps4_keys.json")
+yaml_file_path = os.path.join(os.path.dirname(__file__), "../config/other_ctrl_keys.json")
 
 
 pygame.init()
@@ -58,27 +63,24 @@ def run_control(button_keys,analog_keys):
         #HANDLES ANALOG INPUTS
         if event.type == pygame.JOYAXISMOTION:
             analog_keys[event.axis] = event.value
-            # print(analog_keys)
-            # Horizontal - left Analog
-            if abs(analog_keys[0]) > .4:
-                if analog_keys[0] < -.7:
-                    LEFT = True
-                else:
-                    LEFT = False
-                if analog_keys[0] > .7:
-                    RIGHT = True
-                else:
-                    RIGHT = False
-            # Vertical Analog
-            if abs(analog_keys[4]) > .4:
-                if analog_keys[4] < -.7:
-                    VEL_UP = True
-                else:
-                    VEL_UP = False
-                if analog_keys[4] > .7:
-                    VEL_DOWN = True
-                else:
-                    VEL_DOWN = False
+            if analog_keys[0] < -0.5: #left stick
+                LEFT = True
+            else:
+                LEFT = False
+            if analog_keys[0] > 0.5: #left stick
+                RIGHT = True
+            else:
+                RIGHT = False
+            if analog_keys[2] > 0.4: #left trigger  on 3rd party controller
+            #if analog_keys[3] > 0.4: #left trigger  on ps4 controller
+                VEL_DOWN = True
+            else:
+                VEL_DOWN = False
+            if analog_keys[5] > 0.4: #right trigger  on 3rd party controller
+            #if analog_keys[4] > 0.4: #right trigger  on ps4 controller
+                VEL_UP = True
+            else:
+                VEL_UP = False
 
     # Handle Player movement
     if LEFT:
@@ -101,14 +103,6 @@ def run_control(button_keys,analog_keys):
 def main():
     
 
-    msg = """
-    
-    joystick controller started:
-    use:    left stick for steering
-            R2 to speed-up
-            L2 to breake
-    """
-
     # Initialize the ROS node
     rospy.init_node("joystick_control")
 
@@ -118,35 +112,41 @@ def main():
     # Set the publishing rate to 10 Hz
     rate = rospy.Rate(10)
 
-    #Initialize controller
-    joysticks = []
-    for i in range(pygame.joystick.get_count()):
-        joysticks.append(pygame.joystick.Joystick(i))
-    for joystick in joysticks:
-        joystick.init()
+    
+    #connect to PS4 controller
+    controller = pygame.joystick.Joystick(0)    # in the office PC, using "sudo ds4drv", the ps4 controller is /dev/input/js4, this might change depending on the machine
+                                                # to check wich device use "ls -la /dev/input" before and after connecting your ps4 controller 
+                                                # (if you are using "sudo ds4drv" it will tell you which device has been created, aka the jsN value)
+    controller.init()
 
     with open(yaml_file_path) as file:
         button_keys = json.load(file)
 
+
+    drive_msg = AckermannDrive()
+
+    
     # 0: Left analog horizonal, 1: Left Analog Vertical, 2: Right Analog Horizontal
     # 3: Right Analog Vertical 4: Left Trigger, 5: Right Trigger
-    analog_keys = {0:0, 1:0, 2:0, 3:0, 4: -1, 5: -1 }
-
+    analog_keys = {0: 0, 1: 0, 2: 0, 3: 0, 4: -1, 5: -1}
     # Loop until the ROS node is shutdown
-    while not rospy.is_shutdown(): 
-
-        print(msg)
-
+    while not rospy.is_shutdown():
+        print('use:    left stick for steering')
+        print('        "R2"/"L2" to slow-down/speed-up')
+        print('        "circle" to reset velocity to zero')
 
         steering_angle,speed = run_control(button_keys,analog_keys)
 
         # Create an ackermann drive message with the current steering angle and speed
-        drive_msg = AckermannDrive()
         drive_msg.steering_angle = steering_angle
         drive_msg.speed = speed
 
         # Publish the ackermann drive message
         pub.publish(drive_msg)
+
+        print("---------------------------------------------------------------------------------------------")
+        commanded_vals = " ---- linear speed: " + str(drive_msg.speed) + "  ----- steering angle: " + str(drive_msg.steering_angle) + " rad "
+        print(commanded_vals)
 
         # Sleep to maintain the publishing rate
         rate.sleep()

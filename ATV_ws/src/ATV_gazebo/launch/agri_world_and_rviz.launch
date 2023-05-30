@@ -51,5 +51,9 @@
 
 <!-- launch control: load controllers, activate cmd_vel_to_ackermann_drive node and ackermann_steering node-->
     <include file="$(find ATV_control)/launch/ATV_control.launch"/>
+
+	<!-- Launch visualization in rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ATV_description)/config/sim.rviz" required="true" />
+	<!--<node name="rviz" pkg="rviz" type="rviz" />-->
     
 </launch>

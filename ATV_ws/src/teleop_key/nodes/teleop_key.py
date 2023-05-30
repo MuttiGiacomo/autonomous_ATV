@@ -89,13 +89,14 @@ def main():
     # Set the publishing rate to 10 Hz
     rate = rospy.Rate(10)
 
+    drive_msg = AckermannDrive()
+
     # Loop until the ROS node is shutdown
     while not rospy.is_shutdown():
         # Read input from the keyboard
 
         print(msg)
         # Create an ackermann drive message with the current steering angle and speed
-        drive_msg = AckermannDrive()
         drive_msg.speed , drive_msg.steering_angle = keyboard_input()
         
 
