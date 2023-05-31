@@ -45,6 +45,7 @@ def cmd_callback(data):
     msg.drive.steering_angle = steering
     msg.drive.speed = v
     
+    
     pub.publish(msg)
 
 if __name__ == '__main__': 
